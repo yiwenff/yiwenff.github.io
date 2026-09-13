@@ -99,7 +99,7 @@ em{font-style:italic}
 /* stacked variant — figure on top, text below. Add "stack" to .rows to use it.
    The figure keeps its own aspect here rather than being letterboxed into a
    fixed box, so nothing is padded with dead white space. */
-.rows.stack{--fig-w:100%; --fig-maxh:32rem}   /* figures span the column; text keeps --measure */
+.rows.stack{--fig-w:80%; --fig-maxh:26rem}    /* index figures; click to zoom for detail */
 .rows.stack .row{grid-template-columns:minmax(0,1fr); gap:1.15rem; padding:2.8rem 0}
 .rows.stack .row figure.shot{aspect-ratio:auto; width:var(--fig-w); max-height:var(--fig-maxh);
      display:flex; align-items:center; justify-content:center; background:#fff}
@@ -243,6 +243,13 @@ details.region > summary:focus-visible{outline:2px solid var(--accent); outline-
 .also{font-size:.86rem; color:var(--ink-2); border-top:1px solid var(--rule);
      padding-top:1rem; max-width:var(--measure)}
 .also a{color:var(--accent)}
+.alsohead{font-family:var(--disp); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase;
+     color:var(--ink-3); margin:0 0 .5rem}
+.alsolist + .alsohead{margin-top:1.3rem}
+.alsolist{list-style:none; margin:0; padding:0}
+.alsolist li{position:relative; padding-left:.95rem; margin:0 0 .5rem; line-height:1.6}
+.alsolist li::before{content:""; position:absolute; left:0; top:.62em; width:4px; height:1px;
+     background:var(--rule-2)}
 @media (prefers-reduced-motion:reduce){
   details.region > summary::before,.finding figure.shot{transition:none}
   .finding figure.shot:hover{transform:none}
