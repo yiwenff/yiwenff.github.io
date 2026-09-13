@@ -58,3 +58,7 @@ HANDOFF.md
 node_modules/
 .cache/
 *.log
+
+# ---- Notebook with a live RSHub API token — NEVER publish this ----
+# The redacted copy files/rshub-dmrt-tri-demo.ipynb is the one that ships.
+files/Snow-validation-DMRT-TRI-active.ipynb

@@ -15,6 +15,7 @@
   --disp:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
   --body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
   --rail:13rem;
+  --measure:35rem;   /* one width for prose and figures */
   --railgap:4rem;
 }
 
@@ -68,17 +69,20 @@ aside .cv a{color:var(--accent)}
 main{padding:2.6rem 0 5rem; min-width:0}
 section{margin-bottom:4.5rem}
 h1{font-family:var(--disp); font-weight:400; font-size:1.9rem; letter-spacing:-.01em;
-   color:var(--ink); margin:0 0 .5rem; line-height:1.18}
+   color:var(--ink); margin:0 0 .5rem; line-height:1.18; max-width:var(--measure)}
 h2{font-family:var(--disp); font-weight:400; font-size:1.15rem; color:var(--ink);
-   margin:0 0 1.4rem; padding-bottom:.7rem; border-bottom:1px solid var(--rule); letter-spacing:.005em}
-h3{font-family:var(--disp); font-weight:400; font-size:1.05rem; color:var(--ink); margin:0 0 .3rem}
-p{margin:0 0 1.1rem; max-width:38rem}
+   margin:0 0 1.4rem; padding-bottom:.7rem; border-bottom:1px solid var(--rule); letter-spacing:.005em;
+   max-width:var(--measure)}
+h3{font-family:var(--disp); font-weight:400; font-size:1.05rem; color:var(--ink); margin:0 0 .3rem;
+   max-width:var(--measure)}
+p{margin:0 0 1.1rem; max-width:var(--measure)}
 .lede{font-size:1.02rem; color:var(--ink-2)}
 strong{color:var(--ink); font-weight:500}
 em{font-style:italic}
 
 /* --- identity block --- */
-.ident{display:grid; grid-template-columns:11rem minmax(0,1fr); gap:2.2rem; margin-bottom:2.6rem}
+.ident{display:grid; grid-template-columns:9.5rem minmax(0,1fr); gap:1.8rem; margin-bottom:2.6rem;
+       max-width:var(--measure)}
 @media (max-width:640px){ .ident{grid-template-columns:1fr; gap:1.4rem} .ident .shot{max-width:11rem} }
 .facts{font-size:.95rem; line-height:1.85; color:var(--ink-2); margin:.3rem 0 0}
 .facts b{color:var(--ink); font-weight:400}
@@ -94,13 +98,13 @@ em{font-style:italic}
 /* stacked variant — figure on top, text below. Add "stack" to .rows to use it.
    The figure keeps its own aspect here rather than being letterboxed into a
    fixed box, so nothing is padded with dead white space. */
-.rows.stack{--fig-w:80%; --fig-maxh:21rem}   /* figure size — the one knob */
+.rows.stack{--fig-w:var(--measure); --fig-maxh:21rem}
 .rows.stack .row{grid-template-columns:minmax(0,1fr); gap:1.15rem; padding:2.8rem 0}
 .rows.stack .row figure.shot{aspect-ratio:auto; width:var(--fig-w); max-height:var(--fig-maxh);
      display:flex; align-items:center; justify-content:flex-start; background:#fff}
 .rows.stack .row figure.shot img{width:auto; height:auto; max-width:100%;
      max-height:var(--fig-maxh); object-fit:contain}
-.rows.stack .row .meta{max-width:42rem}
+.rows.stack .row .meta{max-width:var(--measure)}
 /* paper lists inside a stacked row sit tighter than a full publications page */
 .rows.stack .row .pubs{margin-top:.9rem}
 .rows.stack .row .pub{font-size:.88rem; padding:.6rem 0}
@@ -132,10 +136,10 @@ em{font-style:italic}
 
 /* --- figures --- */
 figure.fig{margin:2rem 0}
-figcaption{font-size:.82rem; color:var(--ink-3); margin-top:.8rem; max-width:36rem; line-height:1.6}
+figcaption{font-size:.82rem; color:var(--ink-3); margin-top:.8rem; max-width:var(--measure); line-height:1.6}
 
 /* --- spec list --- */
-dl.spec{display:grid; grid-template-columns:8.5rem minmax(0,1fr); gap:0; margin:2rem 0; max-width:40rem}
+dl.spec{display:grid; grid-template-columns:8.5rem minmax(0,1fr); gap:0; margin:2rem 0; max-width:var(--measure)}
 dl.spec dt{font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3);
            padding:.7rem 1rem .7rem 0; border-top:1px solid var(--rule)}
 dl.spec dd{margin:0; font-size:.93rem; padding:.7rem 0; border-top:1px solid var(--rule)}
@@ -144,7 +148,7 @@ dl.spec dd a{color:var(--accent)}
 @media (max-width:640px){ dl.spec{grid-template-columns:1fr} dl.spec dd{border-top:none; padding-top:0} }
 
 /* --- publications --- */
-.pubs{margin:0}
+.pubs{margin:0; max-width:var(--measure)}
 .pub{display:grid; grid-template-columns:2.8rem minmax(0,1fr); gap:1rem;
      padding:.7rem 0; border-top:1px solid var(--rule); font-size:.92rem; align-items:baseline}
 .pub:first-child{border-top:none}
@@ -160,7 +164,8 @@ dl.spec dd a{color:var(--accent)}
          color:var(--ink-3); margin:2.6rem 0 1rem}
 
 /* --- two-column mini grid (teaching, grants) --- */
-.mini{display:grid; grid-template-columns:repeat(auto-fit,minmax(14rem,1fr)); gap:1.6rem 2.4rem}
+.mini{display:grid; grid-template-columns:repeat(auto-fit,minmax(14rem,1fr)); gap:1.6rem 2.4rem;
+      max-width:var(--measure)}
 .mini h4{font-family:var(--disp); font-size:.96rem; font-weight:400; color:var(--ink); margin:0 0 .2rem}
 .mini .when{font-size:.76rem; letter-spacing:.05em; color:var(--ink-3); margin:0 0 .35rem}
 .mini p{font-size:.89rem; margin:0}
@@ -198,15 +203,15 @@ body.rail-dragging .page{transition:none}
 /* ==========================================================================
    Research — regions map, collapsible regions, paper findings
    ========================================================================== */
-.mapfig{margin:1.6rem 0 2.4rem}
+.mapfig{margin:1.6rem 0 2.4rem; max-width:var(--measure)}
 .mapfig img{width:100%; display:block}
 
 details.region{border-top:1px solid var(--rule); padding:0}
 details.region:first-of-type{border-top:none}
-details.region > summary{list-style:none; cursor:pointer; padding:1.3rem 0 1.3rem 1.7rem;
-     position:relative; display:block; transition:color .15s}
+details.region > summary{list-style:none; cursor:pointer; padding:1.3rem 0; position:relative;
+     display:block; transition:color .15s}
 details.region > summary::-webkit-details-marker{display:none}
-details.region > summary::before{content:""; position:absolute; left:.25rem; top:1.85rem;
+details.region > summary::before{content:""; position:absolute; left:-1.15rem; top:1.85rem;
      width:.42rem; height:.42rem; border-right:1px solid var(--ink-3);
      border-bottom:1px solid var(--ink-3); transform:rotate(-45deg);
      transition:transform .18s ease, border-color .15s}
@@ -217,26 +222,32 @@ details.region > summary:hover h3{color:var(--accent)}
 details.region > summary .rmeta{display:block; font-size:.82rem; color:var(--ink-3);
      margin-top:.3rem; letter-spacing:.02em}
 details.region > summary:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
-.rbody{padding:.2rem 0 2.2rem 1.7rem}
-@media (max-width:640px){ details.region > summary{padding-left:1.4rem} .rbody{padding-left:0} }
+.rbody{padding:.2rem 0 2.2rem}
+@media (max-width:640px){ details.region > summary{padding-left:1.4rem}
+  details.region > summary::before{left:.25rem} }
 
 .finding{margin:0 0 2.6rem}
 .finding:last-child{margin-bottom:1.4rem}
 .finding h4{font-family:var(--disp); font-weight:400; font-size:.98rem; color:var(--ink);
-     margin:0 0 .7rem}
-.finding figure.shot{aspect-ratio:auto; width:100%; max-height:30rem; background:#fff;
+     margin:0 0 .7rem; max-width:var(--measure)}
+.finding figure.shot{aspect-ratio:auto; width:100%; max-width:var(--measure); max-height:30rem; background:#fff;
      display:flex; align-items:center; justify-content:flex-start; margin:0 0 .9rem;
      transition:transform .25s ease, box-shadow .25s ease}
 .finding figure.shot:hover{transform:scale(1.01); box-shadow:0 6px 18px rgba(0,0,0,.12)}
 .finding figure.shot img{width:auto; height:auto; max-width:100%; max-height:30rem; object-fit:contain}
-.finding p{margin:0 0 .6rem; max-width:40rem}
-.cite{font-size:.8rem; color:var(--ink-3); line-height:1.55; max-width:40rem}
+.finding p{margin:0 0 .6rem; max-width:var(--measure)}
+.cite{font-size:.8rem; color:var(--ink-3); line-height:1.55; max-width:var(--measure)}
 .cite a{color:var(--ink-3); text-decoration:underline; text-decoration-color:var(--rule-2)}
 .cite a:hover{color:var(--accent)}
 .also{font-size:.86rem; color:var(--ink-2); border-top:1px solid var(--rule);
-     padding-top:1rem; max-width:42rem}
+     padding-top:1rem; max-width:var(--measure)}
 .also a{color:var(--accent)}
 @media (prefers-reduced-motion:reduce){
   details.region > summary::before,.finding figure.shot{transition:none}
   .finding figure.shot:hover{transform:none}
 }
+
+/* the wide architecture figure obeys the shared measure too */
+figure.fig > .shot{max-width:var(--measure)}
+figure.fig > .shot img{max-width:100%; height:auto}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.88em; color:var(--ink)}
