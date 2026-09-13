@@ -3,31 +3,77 @@
 (function () {
   'use strict';
 
-  /* ---- left rail collapse, remembered per browser ---------------------- */
-  var KEY = 'rail-collapsed';
+  /* ---- left rail: collapse, and drag its edge to resize ---------------- */
+  var KEY_OPEN = 'rail-collapsed';
+  var KEY_W    = 'rail-width';
+  var MIN = 120, MAX = 380;          // px
   var body = document.body;
+  var root = document.documentElement;
 
-  function store(v) { try { localStorage.setItem(KEY, v ? '1' : '0'); } catch (e) {} }
+  function save(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function load(k)    { try { return localStorage.getItem(k); } catch (e) { return null; } }
 
-  function setRail(collapsed, btn) {
+  var btn  = document.querySelector('.railtoggle');
+  var grip = document.querySelector('.railgrip');
+
+  function setRail(collapsed) {
     body.classList.toggle('rail-collapsed', collapsed);
-    if (btn) {
-      btn.setAttribute('aria-expanded', String(!collapsed));
-      btn.querySelector('.lbl').textContent = collapsed ? '' : 'Menu';
-      btn.title = collapsed ? 'Show menu' : 'Hide menu';
-    }
+    if (!btn) return;
+    btn.setAttribute('aria-expanded', String(!collapsed));
+    var label = collapsed ? 'Show menu' : 'Hide menu';
+    btn.title = label;
+    btn.setAttribute('aria-label', label);
   }
 
-  var btn = document.querySelector('.railtoggle');
+  // restore a saved width before anything is interactive
+  var savedW = parseInt(load(KEY_W), 10);
+  if (savedW >= MIN && savedW <= MAX) root.style.setProperty('--rail', savedW + 'px');
+
   if (btn) {
-    setRail(body.classList.contains('rail-collapsed'), btn);
+    setRail(body.classList.contains('rail-collapsed'));
     btn.addEventListener('click', function () {
       var next = !body.classList.contains('rail-collapsed');
-      setRail(next, btn);
-      store(next);
+      setRail(next);
+      save(KEY_OPEN, next ? '1' : '0');
     });
-    // enable the width transition only after the initial state is painted
+    // arm the width transition only after the restored state has painted
     setTimeout(function () { body.classList.add('rail-ready'); }, 0);
+  }
+
+  if (grip) {
+    var aside = grip.parentNode;
+    var dragging = false;
+
+    grip.addEventListener('pointerdown', function (e) {
+      if (window.matchMedia('(max-width:860px)').matches) return;
+      dragging = true;
+      grip.setPointerCapture(e.pointerId);
+      body.classList.add('rail-dragging');
+      e.preventDefault();
+    });
+
+    grip.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var w = e.clientX - aside.getBoundingClientRect().left;
+      w = Math.max(MIN, Math.min(MAX, Math.round(w)));
+      root.style.setProperty('--rail', w + 'px');
+    });
+
+    function endDrag(e) {
+      if (!dragging) return;
+      dragging = false;
+      body.classList.remove('rail-dragging');
+      try { grip.releasePointerCapture(e.pointerId); } catch (err) {}
+      save(KEY_W, parseInt(root.style.getPropertyValue('--rail'), 10) || '');
+    }
+    grip.addEventListener('pointerup', endDrag);
+    grip.addEventListener('pointercancel', endDrag);
+
+    // double-click the handle to restore the default width
+    grip.addEventListener('dblclick', function () {
+      root.style.removeProperty('--rail');
+      save(KEY_W, '');
+    });
   }
 
   /* ---- click a work thumbnail to see the figure full size -------------- */

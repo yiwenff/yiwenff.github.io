@@ -22,13 +22,13 @@
 <div class="page">
 
   <div class="mast">
-    <span class="nm">Yiwen Fang</span>
+    <span class="nmwrap"><button class="railtoggle" aria-expanded="true" aria-controls="railnav" title="Hide menu" aria-label="Hide menu"><span class="pi" aria-hidden="true"></span></button><span class="nm">Yiwen Fang</span></span>
     <span class="aff">ZJU–UIUC Institute · Zhejiang University</span>
   </div>
   <div class="hr"></div>
 
   <aside>
-    <button class="railtoggle" aria-expanded="true" aria-controls="railnav" title="Hide menu"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></button>
+    <div class="railgrip" role="separator" aria-orientation="vertical" aria-label="Resize menu" title="Drag to resize"></div>
     <nav id="railnav">
       <a href="index.html" aria-current="page">Biography</a>
       <a href="research.html">Research</a>
@@ -71,10 +71,10 @@
     <section>
       <h2>Selected work</h2>
       <div class="rows">
-
         <article class="row">
           <figure class="shot r43 fit"><img src="img/work-snowreanalysis.png" alt="NASA NSIDC landing pages for the Western U.S. and High Mountain Asia UCLA Daily Snow Reanalysis datasets"></figure>
           <div>
+            <span class="type">Datasets</span>
             <h3>Snow Reanalysis — Western U.S. &amp; High Mountain Asia</h3>
             <p class="meta">Four decades of mountain snow water reconstructed at 480 metres, where no
               satellite measures it directly. Archived at NASA NSIDC and still in use.</p>
@@ -88,22 +88,12 @@
         </article>
 
         <article class="row">
-          <figure class="shot r43 fit"><img src="img/work-rshub.png" alt="RSHub system architecture: LLM agent, client server, microwave scattering models and job management"></figure>
-          <div>
-            <h3>RSHub</h3>
-            <p class="meta">Microwave scattering models for soil, vegetation and snow, behind one
-              conversation. Built and led with eight students; publicly deployed.</p>
-            <p class="venue">IEEE Geoscience and Remote Sensing Magazine, 2025 · RSHub 2.0 under review</p>
-            <p class="links"><a href="https://rshub.zju.edu.cn">rshub.zju.edu.cn ↗</a></p>
-          </div>
-        </article>
-
-        <article class="row">
           <figure class="shot r43 fit"><img src="img/work-altay.png" alt="Altay elevation, median snow water equivalent season and total SWE volumes for water years 2018 to 2025"></figure>
           <div>
-            <h3>Altay, Xinjiang</h3>
-            <p class="meta">150-metre snow water equivalent for 2018–2025, bringing InSAR phase difference
-              in alongside optical snow cover.</p>
+            <span class="type">Datasets</span>
+            <h3>Altay Snow Reanalysis — Xinjiang</h3>
+            <p class="meta">150-metre snow water equivalent for 2018–2025, archived on figshare. Current
+              work brings InSAR phase difference in alongside optical snow cover.</p>
             <p class="venue">NSFC Young Scientists Fund · field campaigns 2025 · with the Chinese Academy of Sciences</p>
             <p class="links">
               <a href="work.html">More ↗</a>
@@ -113,11 +103,24 @@
         </article>
 
         <article class="row">
+          <figure class="shot r43 fit"><img src="img/work-rshub.png" alt="RSHub system architecture: LLM agent, client server, microwave scattering models and job management"></figure>
+          <div>
+            <span class="type">Software</span>
+            <h3>RSHub</h3>
+            <p class="meta">Microwave scattering models for soil, vegetation and snow, behind one
+              conversation. Built and led with eight students; publicly deployed.</p>
+            <p class="venue">IEEE Geoscience and Remote Sensing Magazine, 2025 · RSHub 2.0 under review</p>
+            <p class="links"><a href="https://rshub.zju.edu.cn">rshub.zju.edu.cn ↗</a></p>
+          </div>
+        </article>
+
+        <article class="row">
           <figure class="shot r43 fit"><img src="img/work-spatiotemporal-analysis.png" alt="Study domains of the midlatitude American Cordillera: Western United States, Sierra Nevada and the Andes"></figure>
           <div>
-            <h3>Snow storage uncertainty — American Cordillera</h3>
-            <p class="meta">How far apart do global snow products sit, and why? Coarse products miss most of
-              the storage; only high resolution resolves windward–leeward contrast.</p>
+            <span class="type">Analysis</span>
+            <h3>How much snow do global products miss?</h3>
+            <p class="meta">Most of it, below 10 km. Only sub-kilometre products recover the
+              windward–leeward contrast that orography imposes.</p>
             <p class="venue">Western U.S. &amp; Andes · WY1985–2021 · precipitation forcing as the dominant term</p>
             <p class="links"><a href="https://doi.org/10.5194/tc-17-5175-2023">The Cryosphere, 2023 ↗</a></p>
           </div>
