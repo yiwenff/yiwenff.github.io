@@ -10,8 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css">
+<script defer src="js/site.js"></script>
 </head>
 <body>
+<script>try{if(localStorage.getItem('rail-collapsed')==='1')document.body.classList.add('rail-collapsed')}catch(e){}</script>
 <div class="page">
 
   <div class="mast">
@@ -21,7 +23,8 @@
   <div class="hr"></div>
 
   <aside>
-    <nav>
+    <button class="railtoggle" aria-expanded="true" aria-controls="railnav" title="Hide menu"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></button>
+    <nav id="railnav">
       <a href="index.html">Biography</a>
       <a href="research.html">Research</a>
       <a href="work.html">Work</a>
@@ -42,20 +45,20 @@
     <section>
       <h2>Peer-reviewed</h2>
       <div class="pubs">
-        <div class="pub"><span class="y">2025</span><span><b>Fang, Y.</b>, Chen, K., Bai, X., Cao, Y., Du, J., Haider, I., … &amp; Tan, S. RSHub: a remote sensing hub for geophysical microwave scattering modeling. <i>IEEE Geoscience and Remote Sensing Magazine</i>, 13(4), 406–413.</span></div>
-        <div class="pub"><span class="y">2025</span><span>Sun, H., <b>Fang, Y.</b>, Margulis, S. A., Mortimer, C., Mudryk, L., &amp; Derksen, C. Evaluation of the Snow Climate Change Initiative (Snow CCI) snow-covered area product within a mountain snow water equivalent reanalysis. <i>The Cryosphere</i>, 19(6), 2017–2036.</span></div>
-        <div class="pub"><span class="y">2025</span><span>Du, J., Cao, Y., <b>Fang, Y.</b>, Cao, Z., &amp; Tan, S. Electromagnetic modeling and validation of wet snow for passive and active microwave observations. <i>IGARSS 2025</i>, 920–923.</span></div>
-        <div class="pub"><span class="y">2024</span><span><b>Fang, Y.</b>, Chen, K., Bai, X., Cao, Y., &amp; Tan, S. A shared computing platform for the remote sensing community: framework setup and user interface. <i>IGARSS 2024</i>, 3066–3069.</span></div>
-        <div class="pub"><span class="y">2024</span><span>Cao, Y., Luo, C., Tan, S., Kang, D. H., <b>Fang, Y.</b>, &amp; Pan, J. A snow water equivalent retrieval framework coupling 1D hydrology and passive microwave radiative transfer models. <i>Remote Sensing</i>, 16(10), 1732.</span></div>
-        <div class="pub"><span class="y">2023</span><span><b>Fang, Y.</b>, Liu, Y., Li, D., Sun, H., &amp; Margulis, S. A. Spatiotemporal snow water storage uncertainty in the midlatitude American Cordillera. <i>The Cryosphere</i>, 17(12), 5175–5195.</span></div>
-        <div class="pub"><span class="y">2023</span><span>Pflug, J. M., <b>Fang, Y.</b>, Margulis, S. A., &amp; Livneh, B. Interactions between thresholds and spatial discretizations of snow: insights from estimates of wolverine denning habitat in the Colorado Rocky Mountains. <i>Hydrology and Earth System Sciences</i>, 27(14), 2747–2762.</span></div>
-        <div class="pub"><span class="y">2023</span><span>Shulgina, T., Gershunov, A., Hatchett, B. J., Guirguis, K., Subramanian, A. C., Margulis, S. A., <b>Fang, Y.</b>, … &amp; Anderson, M. L. Observed and projected changes in snow accumulation and snowline in California's snowy mountains. <i>Climate Dynamics</i>, 61(9), 4809–4824.</span></div>
-        <div class="pub"><span class="y">2023</span><span>Ban, Z., Xin, C., <b>Fang, Y.</b>, Ma, X., Li, D., &amp; Lettenmaier, D. P. Snowmelt–radiation feedback impact on western US streamflow. <i>Geophysical Research Letters</i>, 50(23), e2023GL105118.</span></div>
-        <div class="pub"><span class="y">2023</span><span>Ma, X., Li, D., <b>Fang, Y.</b>, Margulis, S. A., &amp; Lettenmaier, D. P. Estimating spatiotemporally continuous snow water equivalent from intermittent satellite observations: an evaluation using synthetic data. <i>Hydrology and Earth System Sciences</i>, 27(1), 21–38.</span></div>
-        <div class="pub"><span class="y">2022</span><span><b>Fang, Y.</b>, Liu, Y., &amp; Margulis, S. A. A western United States snow reanalysis dataset over the Landsat era from water years 1985 to 2021. <i>Scientific Data</i>, 9(1), 677.</span></div>
-        <div class="pub"><span class="y">2022</span><span>Liu, Y., <b>Fang, Y.</b>, Li, D., &amp; Margulis, S. A. How well do global snow products characterize snow storage in High Mountain Asia? <i>Geophysical Research Letters</i>, 49(16), e2022GL100082.</span></div>
-        <div class="pub"><span class="y">2021</span><span>Liu, Y., <b>Fang, Y.</b>, &amp; Margulis, S. A. Spatiotemporal distribution of seasonal snow water equivalent in High Mountain Asia from an 18-year Landsat–MODIS era snow reanalysis dataset. <i>The Cryosphere</i>, 15(11), 5261–5280.</span></div>
-        <div class="pub"><span class="y">2019</span><span>Margulis, S. A., <b>Fang, Y.</b>, Li, D., Lettenmaier, D. P., &amp; Andreadis, K. The utility of infrequent snow depth images for deriving continuous space-time estimates of seasonal snow water equivalent. <i>Geophysical Research Letters</i>, 46(10), 5331–5340.</span></div>
+        <div class="pub"><span class="y">2025</span><span><b>Fang, Y.</b>, Chen, K., Bai, X., Cao, Y., Du, J., Haider, I., … &amp; Tan, S. RSHub: a remote sensing hub for geophysical microwave scattering modeling. <i>IEEE Geoscience and Remote Sensing Magazine</i>, 13(4), 406–413. <a class="doi" href="https://doi.org/10.1109/MGRS.2025.3540538">doi:10.1109/MGRS.2025.3540538</a></span></div>
+        <div class="pub"><span class="y">2025</span><span>Sun, H., <b>Fang, Y.</b>, Margulis, S. A., Mortimer, C., Mudryk, L., &amp; Derksen, C. Evaluation of the Snow Climate Change Initiative (Snow CCI) snow-covered area product within a mountain snow water equivalent reanalysis. <i>The Cryosphere</i>, 19(6), 2017–2036. <a class="doi" href="https://doi.org/10.5194/tc-19-2017-2025">doi:10.5194/tc-19-2017-2025</a></span></div>
+        <div class="pub"><span class="y">2025</span><span>Du, J., Cao, Y., <b>Fang, Y.</b>, Cao, Z., &amp; Tan, S. Electromagnetic modeling and validation of wet snow for passive and active microwave observations. <i>IGARSS 2025</i>, 920–923. <a class="doi" href="https://doi.org/10.1109/IGARSS55030.2025.11243446">doi:10.1109/IGARSS55030.2025.11243446</a></span></div>
+        <div class="pub"><span class="y">2024</span><span><b>Fang, Y.</b>, Chen, K., Bai, X., Cao, Y., &amp; Tan, S. A shared computing platform for the remote sensing community: framework setup and user interface. <i>IGARSS 2024</i>, 3066–3069. <a class="doi" href="https://doi.org/10.1109/IGARSS53475.2024.10642599">doi:10.1109/IGARSS53475.2024.10642599</a></span></div>
+        <div class="pub"><span class="y">2024</span><span>Cao, Y., Luo, C., Tan, S., Kang, D. H., <b>Fang, Y.</b>, &amp; Pan, J. A snow water equivalent retrieval framework coupling 1D hydrology and passive microwave radiative transfer models. <i>Remote Sensing</i>, 16(10), 1732. <a class="doi" href="https://doi.org/10.3390/rs16101732">doi:10.3390/rs16101732</a></span></div>
+        <div class="pub"><span class="y">2023</span><span><b>Fang, Y.</b>, Liu, Y., Li, D., Sun, H., &amp; Margulis, S. A. Spatiotemporal snow water storage uncertainty in the midlatitude American Cordillera. <i>The Cryosphere</i>, 17(12), 5175–5195. <a class="doi" href="https://doi.org/10.5194/tc-17-5175-2023">doi:10.5194/tc-17-5175-2023</a></span></div>
+        <div class="pub"><span class="y">2023</span><span>Pflug, J. M., <b>Fang, Y.</b>, Margulis, S. A., &amp; Livneh, B. Interactions between thresholds and spatial discretizations of snow: insights from estimates of wolverine denning habitat in the Colorado Rocky Mountains. <i>Hydrology and Earth System Sciences</i>, 27(14), 2747–2762. <a class="doi" href="https://doi.org/10.5194/hess-27-2747-2023">doi:10.5194/hess-27-2747-2023</a></span></div>
+        <div class="pub"><span class="y">2023</span><span>Shulgina, T., Gershunov, A., Hatchett, B. J., Guirguis, K., Subramanian, A. C., Margulis, S. A., <b>Fang, Y.</b>, … &amp; Anderson, M. L. Observed and projected changes in snow accumulation and snowline in California's snowy mountains. <i>Climate Dynamics</i>, 61(9), 4809–4824. <a class="doi" href="https://doi.org/10.1007/s00382-023-06776-w">doi:10.1007/s00382-023-06776-w</a></span></div>
+        <div class="pub"><span class="y">2023</span><span>Ban, Z., Xin, C., <b>Fang, Y.</b>, Ma, X., Li, D., &amp; Lettenmaier, D. P. Snowmelt–radiation feedback impact on western US streamflow. <i>Geophysical Research Letters</i>, 50(23), e2023GL105118. <a class="doi" href="https://doi.org/10.1029/2023GL105118">doi:10.1029/2023GL105118</a></span></div>
+        <div class="pub"><span class="y">2023</span><span>Ma, X., Li, D., <b>Fang, Y.</b>, Margulis, S. A., &amp; Lettenmaier, D. P. Estimating spatiotemporally continuous snow water equivalent from intermittent satellite observations: an evaluation using synthetic data. <i>Hydrology and Earth System Sciences</i>, 27(1), 21–38. <a class="doi" href="https://doi.org/10.5194/hess-27-21-2023">doi:10.5194/hess-27-21-2023</a></span></div>
+        <div class="pub"><span class="y">2022</span><span><b>Fang, Y.</b>, Liu, Y., &amp; Margulis, S. A. A western United States snow reanalysis dataset over the Landsat era from water years 1985 to 2021. <i>Scientific Data</i>, 9(1), 677. <a class="doi" href="https://doi.org/10.1038/s41597-022-01768-7">doi:10.1038/s41597-022-01768-7</a></span></div>
+        <div class="pub"><span class="y">2022</span><span>Liu, Y., <b>Fang, Y.</b>, Li, D., &amp; Margulis, S. A. How well do global snow products characterize snow storage in High Mountain Asia? <i>Geophysical Research Letters</i>, 49(16), e2022GL100082. <a class="doi" href="https://doi.org/10.1029/2022GL100082">doi:10.1029/2022GL100082</a></span></div>
+        <div class="pub"><span class="y">2021</span><span>Liu, Y., <b>Fang, Y.</b>, &amp; Margulis, S. A. Spatiotemporal distribution of seasonal snow water equivalent in High Mountain Asia from an 18-year Landsat–MODIS era snow reanalysis dataset. <i>The Cryosphere</i>, 15(11), 5261–5280. <a class="doi" href="https://doi.org/10.5194/tc-15-5261-2021">doi:10.5194/tc-15-5261-2021</a></span></div>
+        <div class="pub"><span class="y">2019</span><span>Margulis, S. A., <b>Fang, Y.</b>, Li, D., Lettenmaier, D. P., &amp; Andreadis, K. The utility of infrequent snow depth images for deriving continuous space-time estimates of seasonal snow water equivalent. <i>Geophysical Research Letters</i>, 46(10), 5331–5340. <a class="doi" href="https://doi.org/10.1029/2019GL082507">doi:10.1029/2019GL082507</a></span></div>
       </div>
 
       <p class="subhead">Under review</p>
@@ -66,6 +69,7 @@
 
       <p class="subhead">Archived datasets</p>
       <div class="pubs">
+        <div class="pub"><span class="y">2026</span><span><b>Fang, Y.</b>, Pan, J., Margulis, S. A., Zhou, J., Sun, H., Lei, Y., Xiong, C., Wang, H., &amp; Tan, S. <i>Altay Daily Snow Reanalysis, Version 1</i>. figshare. <a class="doi" href="https://doi.org/10.6084/m9.figshare.33421588">doi:10.6084/m9.figshare.33421588</a></span></div>
         <div class="pub"><span class="y">2022</span><span><b>Fang, Y.</b>, Liu, Y., &amp; Margulis, S. A. <i>Western United States UCLA Daily Snow Reanalysis, Version 1</i>. NASA National Snow and Ice Data Center DAAC. <a href="https://doi.org/10.5067/PP7T2GBI52I2">doi:10.5067/PP7T2GBI52I2</a></span></div>
         <div class="pub"><span class="y">2021</span><span>Liu, Y., <b>Fang, Y.</b>, &amp; Margulis, S. A. <i>High Mountain Asia UCLA Daily Snow Reanalysis, Version 1</i>. NASA National Snow and Ice Data Center DAAC. <a href="https://doi.org/10.5067/HNAUGJQXSCVU">doi:10.5067/HNAUGJQXSCVU</a></span></div>
       </div>

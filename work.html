@@ -10,8 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css">
+<script defer src="js/site.js"></script>
 </head>
 <body>
+<script>try{if(localStorage.getItem('rail-collapsed')==='1')document.body.classList.add('rail-collapsed')}catch(e){}</script>
 <div class="page">
 
   <div class="mast">
@@ -21,7 +23,8 @@
   <div class="hr"></div>
 
   <aside>
-    <nav>
+    <button class="railtoggle" aria-expanded="true" aria-controls="railnav" title="Hide menu"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></button>
+    <nav id="railnav">
       <a href="index.html">Biography</a>
       <a href="research.html">Research</a>
       <a href="work.html" aria-current="page">Work</a>
@@ -104,6 +107,7 @@
               field campaigns. Ongoing work evaluates multispectral unmixing and differential interferometry
               as assimilation constraints.</p>
             <p class="venue">NSFC Young Scientists Fund (Type C, 2027–2029, project leader) · National Key R&amp;D Programme contributor · with the Chinese Academy of Sciences</p>
+            <p class="links"><a href="https://doi.org/10.6084/m9.figshare.33421588">Altay Daily Snow Reanalysis, Version 1 ↗</a></p>
           </div>
         </article>
 

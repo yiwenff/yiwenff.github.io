@@ -10,8 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css">
+<script defer src="js/site.js"></script>
 </head>
 <body>
+<script>try{if(localStorage.getItem('rail-collapsed')==='1')document.body.classList.add('rail-collapsed')}catch(e){}</script>
 <div class="page">
 
   <div class="mast">
@@ -21,7 +23,8 @@
   <div class="hr"></div>
 
   <aside>
-    <nav>
+    <button class="railtoggle" aria-expanded="true" aria-controls="railnav" title="Hide menu"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></button>
+    <nav id="railnav">
       <a href="index.html">Biography</a>
       <a href="research.html" aria-current="page">Research</a>
       <a href="work.html">Work</a>
