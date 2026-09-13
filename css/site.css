@@ -272,3 +272,9 @@ aside nav .sub a{font-family:var(--disp); font-size:.82rem; color:var(--ink-3);
      padding:.16rem 0; display:block; transition:color .15s}
 aside nav .sub a:hover{color:var(--accent)}
 @media (max-width:860px){ aside nav .sub{padding-left:0} }
+
+/* one description per figure — a sibling paragraph, never a figcaption inside
+   .shot, which is a flex row and would squeeze the image sideways */
+.figdesc{font-size:.84rem; color:var(--ink-2); margin:.55rem 0 1.6rem;
+         max-width:var(--measure); line-height:1.62}
+.figdesc b{color:var(--ink); font-weight:500}
