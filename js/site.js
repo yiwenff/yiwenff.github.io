@@ -1,4 +1,4 @@
-/* Yiwen Fang — site behaviour. No dependencies.
+/* Yiwen Fang — site behavior. No dependencies.
    Only one job: drag the sidebar's right edge to resize it. Without JS the
    sidebar simply keeps its default width. */
 (function () {

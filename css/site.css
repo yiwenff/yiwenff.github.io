@@ -252,3 +252,11 @@ details.region > summary:focus-visible{outline:2px solid var(--accent); outline-
 figure.fig > .shot{max-width:var(--measure); display:flex; justify-content:center}
 figure.fig > .shot img{max-width:100%; height:auto}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.88em; color:var(--ink)}
+
+/* two figures side by side inside one stacked row */
+.figpair{display:grid; grid-template-columns:1fr 1fr; gap:1rem; align-items:start;
+         width:var(--fig-w); max-width:var(--measure); margin:0 auto}
+.rows.stack .row .figpair figure.shot{width:100%; max-width:none; margin:0; max-height:none}
+.rows.stack .row .figpair figure.shot img{max-height:none}
+.figpair figcaption{font-size:.76rem; margin-top:.5rem}
+@media (max-width:640px){ .figpair{grid-template-columns:1fr} }

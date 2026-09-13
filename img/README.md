@@ -18,6 +18,7 @@ Until a file exists the page shows a neutral hatch at the right size, so the lay
 | `regions-map.svg` | World map marking the four regions covered | research | **done** |
 | `paper-wna-resolution.png` | *TC* 2023 Fig. 3 — peak SWE across ten products by resolution | research | **done** |
 | `paper-snowcci.png` | *TC* 2025 Fig. 9 — Snow CCI vs Landsat reanalysis | research | **done** |
+| `paper-wna-windward.png` | *TC* 2023 Fig. 5 — windward/leeward ratio by product, Sierra Nevada | index | **done** |
 | `paper-hma-swe.png` | *TC* 2021 Fig. 3a — HMA peak SWE climatology (cropped from the 2-panel figure) | research | **done** |
 | `favicon.png` | 1:1 512 px browser tab icon | all | **missing** |
 
@@ -34,6 +35,7 @@ Every reused figure was licence-checked through Crossref before download, not as
 |---|---|---|
 | `reanalysis-map.png` | Fang, Liu & Margulis, *Sci Data* **9**, 677 (2022), Fig. 1 | CC BY 4.0 |
 | `paper-wna-resolution.png` | Fang et al., *The Cryosphere* **17**, 5175 (2023), Fig. 3 | CC BY 4.0 |
+| `paper-wna-windward.png` | Fang et al., *The Cryosphere* **17**, 5175 (2023), Fig. 5 | CC BY 4.0 |
 | `paper-snowcci.png` | Sun et al., *The Cryosphere* **19**, 2017 (2025), Fig. 9 | CC BY 4.0 |
 | `paper-hma-swe.png` | Liu, Fang & Margulis, *The Cryosphere* **15**, 5261 (2021), Fig. 3a | CC BY 4.0 |
 

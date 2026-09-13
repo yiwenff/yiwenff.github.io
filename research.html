@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=20260913-8">
-<script defer src="js/site.js?v=20260913-8"></script>
+<link rel="stylesheet" href="css/site.css?v=20260913-10">
+<script defer src="js/site.js?v=20260913-10"></script>
 </head>
 <body>
 <div class="page">
@@ -145,7 +145,7 @@
       <details class="region">
         <summary>
           <h3>Altay, Xinjiang</h3>
-          <span class="rmeta">about 150 m · daily · water years 2018–2025 · figshare · 1 under review</span>
+          <span class="rmeta">150 m · daily · water years 2018–2025 · Figshare · 1 under review</span>
         </summary>
         <div class="rbody">
 
@@ -189,7 +189,7 @@
         <dt>Vegetation</dt><dd><b>VPRT</b> — vegetation polarimetric radiative transfer</dd>
         <dt>Access</dt><dd>Web interface · Python toolbox · Jupyter notebooks · REST API</dd>
         <dt>Behind it</dt><dd>Job scheduler on HPC, model packages wrapped to a common interface, file and database servers</dd>
-        <dt>Deployed</dt><dd><a href="https://rshub.zju.edu.cn">rshub.zju.edu.cn</a> — public, built and led with eight students</dd>
+        <dt>Deployed</dt><dd><a href="https://rshub.zju.edu.cn">rshub.zju.edu.cn</a> · <a href="https://github.com/zjuiEMLab/rshub/tree/main">github.com/zjuiEMLab/rshub</a> — public, built and led with undergraduate and graduate students</dd>
       </dl>
 
       <p>The platform paper describes the architecture and model registry
@@ -197,9 +197,9 @@
         computing framework underneath it
         (<a href="https://doi.org/10.1109/IGARSS53475.2024.10642599"><i>IGARSS</i> 2024</a>). RSHub 2.0,
         under review, replaces the form the user fills in with an LLM agent that plans and runs the
-        modelling itself.</p>
+        modeling itself.</p>
 
-      <p>The physics the platform serves — wet-snow electromagnetic modelling and validation
+      <p>The physics the platform serves — wet-snow electromagnetic modeling and validation
         (<a href="https://doi.org/10.1109/IGARSS55030.2025.11243446"><i>IGARSS</i> 2025</a>) and SWE
         retrieval coupling 1-D hydrology with passive microwave radiative transfer
         (<a href="https://doi.org/10.3390/rs16101732"><i>Remote Sensing</i> 2024</a>).</p>
@@ -211,14 +211,14 @@
         collect the results. The models themselves run on the cluster — the same call any RSHub user makes.</p>
 
       <article class="finding">
-        <figure class="shot fit"><img src="img/demo-timeseries.png" alt="Simulated versus observed backscatter at 40 degrees incidence for VV, HH, VH and HV polarisations, December 2010 to April 2011"></figure>
-        <p>The model tracks the season in all four polarisations, including the sharp drop in April when the
+        <figure class="shot fit"><img src="img/demo-timeseries.png" alt="Simulated versus observed backscatter at 40 degrees incidence for VV, HH, VH and HV polarizations, December 2010 to April 2011"></figure>
+        <p>The model tracks the season in all four polarizations, including the sharp drop in April when the
           snowpack turns wet and the backscatter collapses by roughly 10 dB.</p>
       </article>
 
       <article class="finding">
-        <figure class="shot fit"><img src="img/demo-scatter.png" alt="Scatter plot of simulated against observed backscatter for four polarisations, with the one-to-one line"></figure>
-        <p><b>Mean RMSE 0.97 dB</b> across the four polarisations — VV 0.90, HH 0.89, VH 1.06, HV 1.03,
+        <figure class="shot fit"><img src="img/demo-scatter.png" alt="Scatter plot of simulated against observed backscatter for four polarizations, with the one-to-one line"></figure>
+        <p><b>Mean RMSE 0.97 dB</b> across the four polarizations — VV 0.90, HH 0.89, VH 1.06, HV 1.03,
           24 points each.</p>
       </article>
 
