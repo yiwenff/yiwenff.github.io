@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=20260913-11">
-<script defer src="js/site.js?v=20260913-11"></script>
+<link rel="stylesheet" href="css/site.css?v=20260913-12">
+<script defer src="js/site.js?v=20260913-12"></script>
 </head>
 <body>
 <div class="page">
@@ -26,6 +26,8 @@
     <nav id="railnav">
       <a href="index.html">Biography</a>
       <a href="research.html" aria-current="page">Research</a>
+      <span class="sub"><a href="#assimilation">Snow data assimilation</a></span>
+      <span class="sub"><a href="#rshub">RSHub and LLM agents</a></span>
       <a href="publications.html">Publications</a>
       <div class="gap"></div>
       <span class="cv"><a href="files/Yiwen_Fang_CV.pdf">Download CV ↗</a></span>
@@ -42,7 +44,8 @@
       that puts physics-based models within reach of the people who need them.</p>
 
     <section>
-      <h2>Snow data assimilation</h2>
+      <details class="sect" id="assimilation" open>
+        <summary><h2>Snow data assimilation</h2></summary>
       <p>Satellites see where snow is, not how much. During melt the rate at which a pixel sheds its cover
         encodes how much water was there, so the amount is inferred rather than measured — a large prior
         ensemble conditioned on satellite fractional snow-covered area.</p>
@@ -61,17 +64,18 @@
 
           <article class="finding">
             <h4>The record itself</h4>
-            <figure class="shot fit"><img src="img/reanalysis-map.png" alt="Western United States domain: in situ snow stations, ASO survey tiles and the basins used in the prior precipitation analysis"></figure>
+            <figure class="shot fit"><img src="img/paper-wus-record.png" alt="Western United States snow reanalysis: seasonal SWE volume cycle by region, a Sierra Nevada close-up, and the peak SWE map for the full domain"></figure>
             <p>Daily snow water equivalent at 480 m for every water year from 1985 to 2021 — the longest
               fine-resolution snow record for the region, and the reference everything below is tested
               against.</p>
-            <p class="cite">Fang, Liu &amp; Margulis, <i>Scientific Data</i> <b>9</b>, 677 (2022). Figure 1,
+            <p class="cite">Fang, Liu &amp; Margulis, <i>Scientific Data</i> <b>9</b>, 677 (2022). Figure 4,
               CC&nbsp;BY&nbsp;4.0. <a href="https://doi.org/10.1038/s41597-022-01768-7">doi:10.1038/s41597-022-01768-7</a></p>
           </article>
 
           <article class="finding">
             <h4>Coarse products lose half the snow</h4>
             <figure class="shot fit"><img src="img/paper-wna-resolution.png" alt="Peak snow water equivalent across ten products over the western United States, arranged from high to low resolution, with a bar chart of climatological volumes by resolution class"></figure>
+            <figure class="shot fit"><img src="img/paper-andes-resolution.png" alt="Peak snow water equivalent across eight products over the Andes, arranged from high to low resolution, with a bar chart of climatological volumes by resolution class"></figure>
             <p>Low-resolution products underestimate western U.S. peak storage by <b>53%</b> — 127±54 km³
               against a 269 km³ reference. In the Andes the shortfall is 34%, and MERRA2 alone misses 79%.</p>
             <p>Agreement needs resolution finer than about 10 km; reproducing the rain shadow needs finer
@@ -79,25 +83,14 @@
               the snowfall spread — R²=0.55 in the western U.S., 0.84 in the Andes — but melt processes
               contribute more uncertainty than rain–snow partitioning does.</p>
             <p class="cite">Fang, Liu, Li, Sun &amp; Margulis, <i>The Cryosphere</i> <b>17</b>, 5175–5195
-              (2023). Figure 3, CC&nbsp;BY&nbsp;4.0. <a href="https://doi.org/10.5194/tc-17-5175-2023">doi:10.5194/tc-17-5175-2023</a></p>
+              (2023). Figures 3 (western U.S.) and 4 (Andes), CC&nbsp;BY&nbsp;4.0.
+              <a href="https://doi.org/10.5194/tc-17-5175-2023">doi:10.5194/tc-17-5175-2023</a></p>
           </article>
 
-          <article class="finding">
-            <h4>A second sensor can drive the same machinery — with a forest-shaped bias</h4>
-            <figure class="shot fit"><img src="img/paper-snowcci.png" alt="Snow CCI versus Landsat reanalysis: seasonal SWE cycles for Tuolumne and Aspen, peak SWE maps and their difference, and relative differences binned by forest cover and aspect"></figure>
-            <p>ESA's Snow CCI snow-cover product is good enough to drive the reanalysis — correlations of
-              0.47–0.91 against in-situ peak SWE, against Landsat's 0.61–0.92.</p>
-            <p>It carries a negative peak-SWE bias of 0.03 to 0.16 m that grows with forest cover and is
-              worst on north-facing slopes. Only about 40% of the assimilated images meaningfully update the
-              posterior, and what separates a good year from a bad one is the quality of the melt-season
-              imagery.</p>
-            <p class="cite">Sun, <b>Fang</b>, Margulis, Mortimer, Mudryk &amp; Derksen, <i>The Cryosphere</i>
-              <b>19</b>, 2017–2036 (2025). Figure 9, CC&nbsp;BY&nbsp;4.0.
-              <a href="https://doi.org/10.5194/tc-19-2017-2025">doi:10.5194/tc-19-2017-2025</a></p>
-          </article>
-
-          <p class="also">Also from this record — how few snow-depth images are enough for a continuous SWE
-            estimate (<a href="https://doi.org/10.1029/2019GL082507"><i>GRL</i> 2019</a>) and the same
+          <p class="also">Also from this record — driving the same machinery from ESA's Snow CCI product
+            instead of Landsat (<a href="https://doi.org/10.5194/tc-19-2017-2025"><i>The Cryosphere</i> 2025</a>);
+            how few snow-depth images are enough for a continuous SWE estimate
+            (<a href="https://doi.org/10.1029/2019GL082507"><i>GRL</i> 2019</a>) and the same
             question against synthetic truth (<a href="https://doi.org/10.5194/hess-27-21-2023"><i>HESS</i> 2023</a>);
             used downstream by others for wolverine denning habitat
             (<a href="https://doi.org/10.5194/hess-27-2747-2023"><i>HESS</i> 2023</a>), snowmelt–radiation
@@ -166,10 +159,12 @@
             field campaigns with the Chinese Academy of Sciences.</p>
         </div>
       </details>
+      </details>
     </section>
 
     <section>
-      <h2>RSHub and LLM agents</h2>
+      <details class="sect" id="rshub" open>
+        <summary><h2>RSHub and LLM agents</h2></summary>
       <p>Physics-based scattering models are accurate and almost unusable — each one a separate codebase,
         its own inputs, its own conventions, its own build. RSHub puts our group's soil, vegetation and snow
         microwave models on one cloud platform behind a single interface, so a researcher can ask how a
@@ -228,6 +223,7 @@
         <dt>Cases</dt><dd>Six NoSREx snowpacks, 7 Dec 2010 – 12 Apr 2011; the April case wet, soil moisture 0.2</dd>
         <dt>Try it</dt><dd><a href="https://github.com/zjuiEMLab/rshub/tree/main/demo">github.com/zjuiEMLab/rshub — demo notebooks ↗</a> for snow, soil and vegetation. <a href="https://github.com/zjuiEMLab/rshub/blob/main/demo/Snow-demo-DMRT-TRI.ipynb">Snow-demo-DMRT-TRI</a> is self-contained and needs only a free token.</dd>
       </dl>
+      </details>
     </section>
   </main>
 

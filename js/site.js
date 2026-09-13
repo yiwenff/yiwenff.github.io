@@ -52,3 +52,23 @@
     save('');
   });
 })();
+
+/* A link to a collapsed section must open it, or the jump lands on nothing. */
+(function () {
+  'use strict';
+  function reveal(hash) {
+    if (!hash || hash.length < 2) return;
+    var el;
+    try { el = document.querySelector(hash); } catch (e) { return; }
+    if (!el) return;
+    var d = el.closest ? el.closest('details') : null;
+    while (d) { d.open = true; d = d.parentNode.closest ? d.parentNode.closest('details') : null; }
+    el.scrollIntoView();
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (a) reveal(a.getAttribute('href'));
+  });
+  window.addEventListener('hashchange', function () { reveal(location.hash); });
+  if (location.hash) reveal(location.hash);
+})();

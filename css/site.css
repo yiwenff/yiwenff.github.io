@@ -262,3 +262,22 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.88em; c
    squeezes it sideways. Captions belong outside the .shot box. */
 .figpair figcaption{display:none}
 @media (max-width:640px){ .figpair{grid-template-columns:1fr} }
+
+/* collapsible top-level sections, with matching sidebar sub-links */
+details.sect > summary{list-style:none; cursor:pointer; position:relative}
+details.sect > summary::-webkit-details-marker{display:none}
+details.sect > summary h2{margin-bottom:1.2rem}
+details.sect > summary::after{content:""; position:absolute; right:.1rem; top:.5rem;
+     width:.45rem; height:.45rem; border-right:1px solid var(--ink-3);
+     border-bottom:1px solid var(--ink-3); transform:rotate(-45deg);
+     transition:transform .18s ease, border-color .15s}
+details.sect[open] > summary::after{transform:rotate(45deg)}
+details.sect > summary:hover h2{color:var(--accent)}
+details.sect > summary:hover::after{border-color:var(--accent)}
+details.sect > summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+
+aside nav .sub{display:block; padding-left:.85rem}
+aside nav .sub a{font-family:var(--disp); font-size:.82rem; color:var(--ink-3);
+     padding:.16rem 0; display:block; transition:color .15s}
+aside nav .sub a:hover{color:var(--accent)}
+@media (max-width:860px){ aside nav .sub{padding-left:0} }

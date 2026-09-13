@@ -13,11 +13,11 @@ Until a file exists the page shows a neutral hatch at the right size, so the lay
 | `work-rshub.png` | RSHub system architecture diagram | index, work | **done** |
 | `work-altay.png` | Altay elevation / SWE season / WY2018–2025 volumes | index, work | **done** |
 | `work-spatiotemporal-analysis.png` | American Cordillera study domains — WUS, Sierra, Andes | index, work | **done** |
-| `reanalysis-map.png` | Fig. 1 of the *Sci Data* 2022 paper — WUS domain, in situ sites, ASO tiles | research | **done** |
+| `paper-wus-record.png` | *Sci Data* 2022 Fig. 4 — WUS seasonal cycle, Sierra close-up, peak SWE map | research | **done** |
 | `og-card.jpg` | 1200×630 social preview card | all | **missing** |
 | `regions-map.svg` | World map marking the four regions covered | research | **done** |
 | `paper-wna-resolution.png` | *TC* 2023 Fig. 3 — peak SWE across ten products by resolution | research | **done** |
-| `paper-snowcci.png` | *TC* 2025 Fig. 9 — Snow CCI vs Landsat reanalysis | research | **done** |
+| `paper-andes-resolution.png` | *TC* 2023 Fig. 4 — peak SWE across eight products over the Andes | research | **done** |
 | `paper-wna-windward.png` | *TC* 2023 Fig. 5 — windward/leeward ratio by product, Sierra Nevada | index | **done** |
 | `paper-hma-swe.png` | *TC* 2021 Fig. 3a — HMA peak SWE climatology (cropped from the 2-panel figure) | research | **done** |
 | `favicon.png` | 1:1 512 px browser tab icon | all | **missing** |
@@ -33,10 +33,10 @@ Every reused figure was licence-checked through Crossref before download, not as
 
 | File | Source | Licence |
 |---|---|---|
-| `reanalysis-map.png` | Fang, Liu & Margulis, *Sci Data* **9**, 677 (2022), Fig. 1 | CC BY 4.0 |
+| `paper-wus-record.png` | Fang, Liu & Margulis, *Sci Data* **9**, 677 (2022), Fig. 4 | CC BY 4.0 |
 | `paper-wna-resolution.png` | Fang et al., *The Cryosphere* **17**, 5175 (2023), Fig. 3 | CC BY 4.0 |
 | `paper-wna-windward.png` | Fang et al., *The Cryosphere* **17**, 5175 (2023), Fig. 5 | CC BY 4.0 |
-| `paper-snowcci.png` | Sun et al., *The Cryosphere* **19**, 2017 (2025), Fig. 9 | CC BY 4.0 |
+| `paper-andes-resolution.png` | Fang et al., *The Cryosphere* **17**, 5175 (2023), Fig. 4 | CC BY 4.0 |
 | `paper-hma-swe.png` | Liu, Fang & Margulis, *The Cryosphere* **15**, 5261 (2021), Fig. 3a | CC BY 4.0 |
 
 ### Portrait
@@ -70,3 +70,8 @@ The RSHub figure came from Yiwen directly, not from the IEEE PDF. **IEEE holds c
 RSHub paper**, so never lift a figure from that PDF — regenerate it.
 
 Field photographs with identifiable colleagues: ask them first.
+
+`img/_originals/` also holds two figures pulled from the live pages on 2026-09-13 but kept in case they
+come back: `paper-snowcci.png` (*TC* 2025 Fig. 9, dropped with the Snow CCI entry) and
+`reanalysis-map.png` (*Sci Data* Fig. 1, replaced by Fig. 4, which shows the product rather than the
+domain). Both are CC BY 4.0 and would need their citation restored alongside them.
