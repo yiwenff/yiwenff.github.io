@@ -59,6 +59,9 @@ node_modules/
 .cache/
 *.log
 
-# ---- Notebook with a live RSHub API token — NEVER publish this ----
-# The redacted copy files/rshub-dmrt-tri-demo.ipynb is the one that ships.
-files/Snow-validation-DMRT-TRI-active.ipynb
+# ---- Notebooks are never published from this repo ----
+# The RSHub demo notebook is a local working copy only: the page links the
+# upstream demos at github.com/zjuiEMLab/rshub instead. The local copy also
+# still carries a live API token in cell 7's stored output.
+files/*.ipynb
+*.ipynb

@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=20260913-4">
-<script defer src="js/site.js?v=20260913-4"></script>
+<link rel="stylesheet" href="css/site.css?v=20260913-5">
+<script defer src="js/site.js?v=20260913-5"></script>
 </head>
 <body>
 <div class="page">
@@ -209,7 +209,7 @@
       <p>Six snowpack profiles from the NoSREx campaign, December 2010 to April 2011, run through DMRT-TRI
         at 16.7 GHz and compared with tower backscatter at four incidence angles.</p>
       <p>The whole study is about twenty lines: describe the snowpack layer by layer, submit six jobs,
-        collect the results. The models themselves run on the cluster.</p>
+        collect the results. The models themselves run on the cluster — the same call any RSHub user makes.</p>
 
       <article class="finding">
         <figure class="shot fit"><img src="img/demo-timeseries.png" alt="Simulated versus observed backscatter at 40 degrees incidence for VV, HH, VH and HV polarisations, December 2010 to April 2011"></figure>
@@ -227,8 +227,7 @@
         <dt>Model</dt><dd>DMRT-TRI, active mode, via <code>rshub.submit_jobs</code></dd>
         <dt>Frequency</dt><dd>16.7 GHz · incidence 30°, 40°, 50°, 60° · VV, HH, VH, HV</dd>
         <dt>Cases</dt><dd>Six NoSREx snowpacks, 7 Dec 2010 – 12 Apr 2011; the April case wet, soil moisture 0.2</dd>
-        <dt>Run it</dt><dd><a href="https://github.com/zjuiEMLab/rshub/blob/main/demo/Snow-demo-DMRT-TRI.ipynb">Snow-demo-DMRT-TRI.ipynb</a> in the RSHub repo — self-contained, needs only a free token</dd>
-        <dt>This case</dt><dd><a href="files/rshub-dmrt-tri-demo.ipynb">Snow-validation-DMRT-TRI-active.ipynb ↗</a> — the run above; it also needs the NoSREx snowpack profiles and tower observations, which are not ours to redistribute</dd>
+        <dt>Try it</dt><dd><a href="https://github.com/zjuiEMLab/rshub/tree/main/demo">github.com/zjuiEMLab/rshub — demo notebooks ↗</a> for snow, soil and vegetation. <a href="https://github.com/zjuiEMLab/rshub/blob/main/demo/Snow-demo-DMRT-TRI.ipynb">Snow-demo-DMRT-TRI</a> is self-contained and needs only a free token.</dd>
       </dl>
     </section>
   </main>
