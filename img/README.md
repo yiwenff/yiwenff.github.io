@@ -14,7 +14,6 @@ Until a file exists the page shows a neutral hatch at the right size, so the lay
 | `work-altay.png` | Altay elevation / SWE season / WY2018–2025 volumes | index, work | **done** |
 | `work-spatiotemporal-analysis.png` | American Cordillera study domains — WUS, Sierra, Andes | index, work | **done** |
 | `reanalysis-map.png` | Fig. 1 of the *Sci Data* 2022 paper — WUS domain, in situ sites, ASO tiles | research | **done** |
-| `work-vr.jpg` | VR teaching platform | work | **missing** |
 | `og-card.jpg` | 1200×630 social preview card | all | **missing** |
 | `favicon.png` | 1:1 512 px browser tab icon | all | **missing** |
 
