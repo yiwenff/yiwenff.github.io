@@ -15,7 +15,7 @@
   --disp:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
   --body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
   --rail:13rem;
-  --measure:100%;    /* one width for prose and figures — fills the main column */
+  --measure:80%;     /* one width for prose and figures */
   --railgap:4rem;
 }
 
@@ -101,7 +101,7 @@ em{font-style:italic}
 .rows.stack{--fig-w:var(--measure); --fig-maxh:21rem}
 .rows.stack .row{grid-template-columns:minmax(0,1fr); gap:1.15rem; padding:2.8rem 0}
 .rows.stack .row figure.shot{aspect-ratio:auto; width:var(--fig-w); max-height:var(--fig-maxh);
-     display:flex; align-items:center; justify-content:flex-start; background:#fff}
+     display:flex; align-items:center; justify-content:center; background:#fff}
 .rows.stack .row figure.shot img{width:auto; height:auto; max-width:100%;
      max-height:var(--fig-maxh); object-fit:contain}
 .rows.stack .row .meta{max-width:var(--measure)}
@@ -231,7 +231,7 @@ details.region > summary:focus-visible{outline:2px solid var(--accent); outline-
 .finding h4{font-family:var(--disp); font-weight:400; font-size:.98rem; color:var(--ink);
      margin:0 0 .7rem; max-width:var(--measure)}
 .finding figure.shot{aspect-ratio:auto; width:100%; max-width:var(--measure); max-height:30rem; background:#fff;
-     display:flex; align-items:center; justify-content:flex-start; margin:0 0 .9rem;
+     display:flex; align-items:center; justify-content:center; margin:0 0 .9rem;
      transition:transform .25s ease, box-shadow .25s ease}
 .finding figure.shot:hover{transform:scale(1.01); box-shadow:0 6px 18px rgba(0,0,0,.12)}
 .finding figure.shot img{width:auto; height:auto; max-width:100%; max-height:30rem; object-fit:contain}
@@ -248,6 +248,6 @@ details.region > summary:focus-visible{outline:2px solid var(--accent); outline-
 }
 
 /* the wide architecture figure obeys the shared measure too */
-figure.fig > .shot{max-width:var(--measure)}
+figure.fig > .shot{max-width:var(--measure); display:flex; justify-content:center}
 figure.fig > .shot img{max-width:100%; height:auto}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.88em; color:var(--ink)}
