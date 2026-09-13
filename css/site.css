@@ -28,6 +28,8 @@ body{
 }
 a{color:var(--ink); text-decoration:none}
 a:hover{color:var(--accent)}
+/* links inside body prose need to look like links */
+p a{color:var(--accent)}
 img{max-width:100%}
 
 /* --- image wells: reserve the box, show a neutral hatch until the file lands --- */
