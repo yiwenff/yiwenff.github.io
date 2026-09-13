@@ -1,0 +1,60 @@
+# ---- macOS ----
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ---- Windows ----
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ---- Editors ----
+.vscode/
+.idea/
+*.swp
+*~
+
+# ---- Working files that must NOT be published ----
+# This repo is public. Anything here becomes a public URL.
+/private/
+/drafts/
+*.docx
+*.doc
+*.pptx
+*.xlsx
+*_DRAFT.*
+*_draft.*
+*_internal.*
+cover_letter*
+Cover_Letter*
+research_statement*
+Research_Statement*
+teaching_statement*
+Teaching_Statement*
+
+# ---- Local-only: never published ----
+# This repo is public and serves from its root — anything committed becomes a public URL.
+# superseded design drafts and image originals
+/_archive/
+# internal working notes, contains local filesystem paths
+HANDOFF.md
+
+# ---- Image originals (keep the repo small; commit only web-sized exports) ----
+/img/_originals/
+*.HEIC
+*.heic
+*.psd
+*.ai
+*.tif
+*.tiff
+*.RAW
+*.CR2
+*.NEF
+
+# ---- Build / tooling, if you ever add any ----
+node_modules/
+.cache/
+*.log

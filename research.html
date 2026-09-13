@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — Yiwen Fang</title>
+<meta name="description" content="Research programme: LLM agents for hydrological workflows, next-generation snow reanalysis and satellite retrievals, and cryosphere risk.">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<div class="page">
+
+  <div class="mast">
+    <span class="nm"><a href="index.html">Yiwen Fang</a></span>
+    <span class="aff">ZJU–UIUC Institute · Zhejiang University</span>
+  </div>
+  <div class="hr"></div>
+
+  <aside>
+    <nav>
+      <a href="index.html">Biography</a>
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="work.html">Work</a>
+      <a href="publications.html">Publications</a>
+      <div class="gap"></div>
+      <span class="cv"><a href="files/Yiwen_Fang_CV.pdf">Download CV ↗</a></span>
+      <span class="out"><a href="https://github.com/yiwenff">GitHub</a></span>
+      <span class="out"><a href="https://rshub.zju.edu.cn">RSHub</a></span>
+    </nav>
+  </aside>
+
+  <main>
+    <h1>Research</h1>
+
+    <section>
+      <p class="lede">How much water is held in the world's mountains, and how confidently do we know it?
+        That question organises the programme. It sits between land-surface hydrology, microwave remote
+        sensing, and machine-learning systems engineering.</p>
+
+      <div class="track">
+        <div class="tk">Track I<br>Primary</div>
+        <div>
+          <h3>LLM agents for hydrological workflow automation</h3>
+          <p>Modular agent layers — acquisition agents that retrieve and quality-screen forcings, land cover,
+            DEMs and in-situ records from NSIDC, Copernicus and elsewhere; modelling agents that configure,
+            execute, calibrate and quantify uncertainty in physics-based snow and hydrology models; analysis
+            agents that produce publication-grade results. RSHub is the architectural prototype and the
+            proven deployment path.</p>
+        </div>
+      </div>
+      <div class="track">
+        <div class="tk">Track II</div>
+        <div>
+          <h3>Next-generation snow reanalysis and satellite retrievals</h3>
+          <p>Extending assimilation to Sentinel-1, LuTan-1 and NISAR InSAR phase change as a direct
+            constraint on snow water equivalent; neural emulators trained on the published long-term
+            reanalysis records; continued collaboration with the Chinese Academy of Sciences on field
+            infrastructure and ground truth.</p>
+        </div>
+      </div>
+      <div class="track">
+        <div class="tk">Track III<br>Exploratory</div>
+        <div>
+          <h3>Cryosphere science for socioeconomic and ESG risk</h3>
+          <p>Physically-based flood-deluge and snowmelt-runoff indices as inputs to financial risk models,
+            linking cryosphere change to corporate flood exposure and infrastructure resilience.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Case study — Snow Reanalysis</h2>
+
+      <figure class="fig">
+        <span class="shot r169 fit"><img src="img/reanalysis-map.png" alt="Western United States domain: in situ snow sites, ASO survey tiles and the basins used in the prior precipitation analysis"></span>
+        <figcaption>Western U.S. reanalysis domain — in situ snow stations, ASO survey tiles, and the basins
+          used in the prior precipitation analysis. Figure 1 from Fang, Liu &amp; Margulis,
+          <a href="https://doi.org/10.1038/s41597-022-01768-7"><i>Scientific Data</i> 9, 677 (2022)</a>, CC&nbsp;BY&nbsp;4.0.</figcaption>
+      </figure>
+
+      <p><strong>The problem.</strong> No satellite measures snow water equivalent directly at the scale
+        mountains actually vary. What satellites see reliably is fractional snow-covered area — where snow
+        is, not how much. During melt, though, the rate at which a pixel sheds its cover encodes how much
+        water was there: deeper snow takes longer to disappear.</p>
+
+      <p><strong>The approach.</strong> Generate a large prior ensemble by driving a coupled land-surface and
+        snow-depletion model with perturbed meteorological forcings and parameters, then condition that
+        ensemble on Landsat- and MODIS-derived fSCA with a particle-batch smoother. The posterior is a daily,
+        480 m, physically consistent estimate that carries its own uncertainty — which matters as much as the
+        mean.</p>
+
+      <dl class="spec">
+        <dt>Domain</dt><dd><b>Western United States</b> and <b>High Mountain Asia</b>; extended to Altay, Xinjiang</dd>
+        <dt>Resolution</dt><dd>480 m, daily, water years 1985–2021 — the longest fine-resolution snow record for the region</dd>
+        <dt>Method</dt><dd>Bayesian ensemble data assimilation; particle-batch smoother on Landsat/MODIS fSCA</dd>
+        <dt>Archive</dt><dd>NASA NSIDC DAAC — <a href="https://doi.org/10.5067/PP7T2GBI52I2">10.5067/PP7T2GBI52I2</a> · <a href="https://doi.org/10.5067/HNAUGJQXSCVU">10.5067/HNAUGJQXSCVU</a></dd>
+        <dt>Downstream</dt><dd>Water management, ML training and benchmarking, wolverine denning habitat, snowmelt–radiation feedbacks on streamflow, California snowline projections</dd>
+        <dt>Next</dt><dd>150 m Altay SWE (2018–2025); InSAR phase difference as a second independent constraint</dd>
+      </dl>
+
+      <p><strong>What it enabled.</strong> Beyond the datasets, the framework let us map where snow-storage
+        uncertainty concentrates across the midlatitude American Cordillera, test how well global snow
+        products characterise High Mountain Asia, establish how few snow-depth images are needed for
+        continuous SWE estimation, and evaluate ESA's Snow CCI product from inside a reanalysis.</p>
+    </section>
+
+    <section>
+      <h2>Teaching and mentoring</h2>
+      <p>I have advised more than a dozen undergraduate and graduate students at Zhejiang University and
+        UCLA. The 2025 summer cohort produced the RSHub 2.0 manuscript.</p>
+      <div class="mini">
+        <div><h4>Invited lecture</h4><p class="when">2024 · Zhejiang University</p><p>Frontier Engineering Technology series: snow remote sensing and data assimilation.</p></div>
+        <div><h4>Teaching assistant</h4><p class="when">2018–2022 · UCLA</p><p>Applied Numerical Analysis &amp; Modeling; Introduction to Hydrology.</p></div>
+        <div><h4>Summer student programme</h4><p class="when">2025 · Zhejiang University</p><p>Five undergraduates on LLM agents for geophysical modelling.</p></div>
+        <div><h4>RSHub student project</h4><p class="when">2024–2025 · Zhejiang University</p><p>Four undergraduate and four graduate researchers.</p></div>
+        <div><h4>Undergraduate thesis</h4><p class="when">Spring 2025 · Zhejiang University</p><p>One thesis student supervised to completion.</p></div>
+        <div><h4>Directed research</h4><p class="when">Spring 2019 · UCLA</p><p>C&amp;EE 199 senior research project.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Yiwen Fang · ZJU–UIUC Institute, Haining, Zhejiang</span>
+    <span>Updated September 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+/* ==========================================================================
+   Yiwen Fang — personal site
+   Plan A "Gallery White": bitforms ground + left rail, Barron content rows.
+   Single stylesheet shared by every page.
+   ========================================================================== */
+
+:root{
+  --bg:#ffffff;
+  --ink:#1a1a1a;        /* headings, emphasis */
+  --ink-2:#6b6b6b;      /* body text */
+  --ink-3:#9a9a9a;      /* captions, metadata */
+  --rule:#e6e6e6;
+  --rule-2:#d2d2d2;
+  --accent:#3f7f9c;
+  --disp:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+  --body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+  --rail:13rem;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink-2);
+  font-family:var(--body); font-size:15px; font-weight:300; line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--ink); text-decoration:none}
+a:hover{color:var(--accent)}
+img{max-width:100%}
+
+/* --- image wells: reserve the box, show a neutral hatch until the file lands --- */
+.shot{margin:0; overflow:hidden; display:block;
+      background:repeating-linear-gradient(135deg,#f2f2f0 0 8px,#ebebe8 8px 16px)}
+.shot img{width:100%; height:100%; object-fit:cover; display:block}
+.r11{aspect-ratio:1/1} .r43{aspect-ratio:4/3} .r169{aspect-ratio:16/9}
+/* scientific figures: letterbox rather than crop — axes and legends must survive */
+.shot.fit{background:#fff}
+.shot.fit img{object-fit:contain}
+
+/* --- shell --- */
+.page{max-width:66rem; margin:0 auto; padding:0 2.5rem;
+      display:grid; grid-template-columns:var(--rail) minmax(0,1fr); gap:0 4rem}
+@media (max-width:860px){ .page{grid-template-columns:1fr; gap:0; padding:0 1.4rem} }
+
+.mast{grid-column:1/-1; display:flex; justify-content:space-between; align-items:baseline;
+      gap:1.5rem; flex-wrap:wrap; padding:2.2rem 0 2rem}
+.mast .nm{font-family:var(--disp); font-size:1.32rem; font-weight:400; letter-spacing:.01em; color:var(--ink)}
+.mast .aff{font-size:.78rem; letter-spacing:.06em; color:var(--ink-3)}
+.hr{grid-column:1/-1; height:1px; background:var(--rule)}
+
+/* --- left rail --- */
+aside{position:sticky; top:2rem; align-self:start; padding:2.6rem 0 3rem}
+@media (max-width:860px){ aside{position:static; padding:1.6rem 0 .5rem} }
+aside nav{display:flex; flex-direction:column; gap:.05rem}
+@media (max-width:860px){ aside nav{flex-direction:row; flex-wrap:wrap; gap:.4rem 1.4rem} }
+aside nav a{font-family:var(--disp); font-size:.92rem; font-weight:400; color:var(--ink-2);
+            padding:.28rem 0; transition:color .15s}
+aside nav a:hover{color:var(--ink)}
+aside nav a[aria-current]{color:var(--ink); font-weight:500}
+aside .gap{height:1.5rem}
+@media (max-width:860px){ aside .gap{display:none} }
+aside .out a{font-size:.88rem; color:var(--ink-2)}
+aside .out a::after{content:" ↗"; color:var(--ink-3); font-size:.8em}
+aside .cv a{color:var(--accent)}
+
+/* --- main --- */
+main{padding:2.6rem 0 5rem; min-width:0}
+section{margin-bottom:4.5rem}
+h1{font-family:var(--disp); font-weight:400; font-size:1.9rem; letter-spacing:-.01em;
+   color:var(--ink); margin:0 0 .5rem; line-height:1.18}
+h2{font-family:var(--disp); font-weight:400; font-size:1.15rem; color:var(--ink);
+   margin:0 0 1.4rem; padding-bottom:.7rem; border-bottom:1px solid var(--rule); letter-spacing:.005em}
+h3{font-family:var(--disp); font-weight:400; font-size:1.05rem; color:var(--ink); margin:0 0 .3rem}
+p{margin:0 0 1.1rem; max-width:38rem}
+.lede{font-size:1.02rem; color:var(--ink-2)}
+strong{color:var(--ink); font-weight:500}
+em{font-style:italic}
+
+/* --- identity block --- */
+.ident{display:grid; grid-template-columns:11rem minmax(0,1fr); gap:2.2rem; margin-bottom:2.6rem}
+@media (max-width:640px){ .ident{grid-template-columns:1fr; gap:1.4rem} .ident .shot{max-width:11rem} }
+.facts{font-size:.95rem; line-height:1.85; color:var(--ink-2); margin:.3rem 0 0}
+.facts b{color:var(--ink); font-weight:400}
+
+/* --- content rows (thumbnail left, text right) --- */
+.rows{display:flex; flex-direction:column}
+.row{display:grid; grid-template-columns:11rem minmax(0,1fr); gap:1.8rem;
+     padding:1.6rem 0; border-top:1px solid var(--rule); align-items:start}
+.row:first-child{border-top:none; padding-top:.4rem}
+@media (max-width:640px){ .row{grid-template-columns:1fr; gap:.9rem} }
+.row .meta{font-size:.9rem; color:var(--ink-2); margin:.3rem 0 0}
+.row .venue{font-size:.82rem; color:var(--ink-3); margin:.35rem 0 0; letter-spacing:.02em}
+.row .links{margin:.7rem 0 0; font-size:.82rem; display:flex; gap:1.1rem; flex-wrap:wrap}
+.row .links a{color:var(--accent)}
+.badge{display:inline-block; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase;
+       color:var(--accent); border:1px solid var(--rule-2); padding:.24rem .5rem;
+       margin-bottom:.5rem; border-radius:2px}
+
+/* --- research tracks --- */
+.track{display:grid; grid-template-columns:5.5rem minmax(0,1fr); gap:1.6rem;
+       padding:1.5rem 0; border-top:1px solid var(--rule)}
+.track:first-of-type{border-top:none; padding-top:.3rem}
+@media (max-width:640px){ .track{grid-template-columns:1fr; gap:.6rem} }
+.track .tk{font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); padding-top:.28rem}
+.track p{margin:.3rem 0 0; font-size:.94rem}
+
+/* --- figures --- */
+figure.fig{margin:2rem 0}
+figcaption{font-size:.82rem; color:var(--ink-3); margin-top:.8rem; max-width:36rem; line-height:1.6}
+
+/* --- spec list --- */
+dl.spec{display:grid; grid-template-columns:8.5rem minmax(0,1fr); gap:0; margin:2rem 0; max-width:40rem}
+dl.spec dt{font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3);
+           padding:.7rem 1rem .7rem 0; border-top:1px solid var(--rule)}
+dl.spec dd{margin:0; font-size:.93rem; padding:.7rem 0; border-top:1px solid var(--rule)}
+dl.spec dd b{color:var(--ink); font-weight:500}
+dl.spec dd a{color:var(--accent)}
+@media (max-width:640px){ dl.spec{grid-template-columns:1fr} dl.spec dd{border-top:none; padding-top:0} }
+
+/* --- publications --- */
+.pubs{margin:0}
+.pub{display:grid; grid-template-columns:2.8rem minmax(0,1fr); gap:1rem;
+     padding:.7rem 0; border-top:1px solid var(--rule); font-size:.92rem; align-items:baseline}
+.pub:first-child{border-top:none}
+.pub .y{font-size:.82rem; color:var(--ink-3)}
+.pub b{color:var(--ink); font-weight:500}
+.pub i{color:var(--ink); font-style:italic; font-weight:300}
+.pub a{color:var(--accent)}
+.more{margin-top:1.2rem; font-size:.88rem}
+.more a{color:var(--accent)}
+.subhead{font-family:var(--disp); font-size:.78rem; letter-spacing:.12em; text-transform:uppercase;
+         color:var(--ink-3); margin:2.6rem 0 1rem}
+
+/* --- two-column mini grid (teaching, grants) --- */
+.mini{display:grid; grid-template-columns:repeat(auto-fit,minmax(14rem,1fr)); gap:1.6rem 2.4rem}
+.mini h4{font-family:var(--disp); font-size:.96rem; font-weight:400; color:var(--ink); margin:0 0 .2rem}
+.mini .when{font-size:.76rem; letter-spacing:.05em; color:var(--ink-3); margin:0 0 .35rem}
+.mini p{font-size:.89rem; margin:0}
+
+footer{grid-column:1/-1; border-top:1px solid var(--rule); padding:1.6rem 0 3rem;
+       display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+       font-size:.8rem; color:var(--ink-3); letter-spacing:.03em}
