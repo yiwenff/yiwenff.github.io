@@ -81,9 +81,10 @@ strong{color:var(--ink); font-weight:500}
 em{font-style:italic}
 
 /* --- identity block --- */
-.ident{display:grid; grid-template-columns:9.5rem minmax(0,1fr); gap:1.8rem; margin-bottom:2.6rem;
+.ident{display:grid; grid-template-columns:12.5rem minmax(0,1fr); gap:2rem; margin-bottom:2.6rem;
        max-width:var(--measure)}
-@media (max-width:640px){ .ident{grid-template-columns:1fr; gap:1.4rem} .ident .shot{max-width:11rem} }
+@media (max-width:900px){ .ident{grid-template-columns:11rem minmax(0,1fr)} }
+@media (max-width:640px){ .ident{grid-template-columns:1fr; gap:1.4rem} .ident .shot{max-width:12rem} }
 .facts{font-size:.95rem; line-height:1.85; color:var(--ink-2); margin:.3rem 0 0}
 .facts b{color:var(--ink); font-weight:400}
 

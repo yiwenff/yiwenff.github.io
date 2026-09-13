@@ -8,7 +8,7 @@ Until a file exists the page shows a neutral hatch at the right size, so the lay
 
 | Filename | What it is | Appears on | Status |
 |---|---|---|---|
-| `portrait.jpg` | Headshot, 1:1 800 px | index | **done** |
+| `portrait.jpg` | Headshot, 1:1 900 px — **v1 tight** | index | **done** |
 | `work-snowreanalysis.png` | NSIDC landing pages, WUS + HMA reanalysis | index, work | **done** |
 | `work-rshub.png` | RSHub system architecture diagram | index, work | **done** |
 | `work-altay.png` | Altay elevation / SWE season / WY2018–2025 volumes | index, work | **done** |
@@ -36,6 +36,21 @@ Every reused figure was licence-checked through Crossref before download, not as
 | `paper-wna-resolution.png` | Fang et al., *The Cryosphere* **17**, 5175 (2023), Fig. 3 | CC BY 4.0 |
 | `paper-snowcci.png` | Sun et al., *The Cryosphere* **19**, 2017 (2025), Fig. 9 | CC BY 4.0 |
 | `paper-hma-swe.png` | Liu, Fang & Margulis, *The Cryosphere* **15**, 5261 (2021), Fig. 3a | CC BY 4.0 |
+
+### Portrait
+
+Re-cropped on 2026-09-13 from the 4032x3024 HEIC in `_archive/_originals/`, not from the old 800 px JPEG,
+so the tighter framing costs no sharpness. Three versions were produced; `img/_originals/` holds the two
+not in use plus the previous file (`portrait-previous.jpg`).
+
+| Version | Treatment |
+|---|---|
+| **v1 tight** (live) | Square crop, face on the upper third; brightness +6%, contrast +10%, light sharpen |
+| v2 warm | Same crop; brightness +14%, saturation +20%, warm shift — counters the flat overcast light |
+| v3 wide | Looser crop keeping the canyon and falls; contrast +20%, saturation −10% |
+
+Swapping is one copy: `cp img/_originals/portrait-v2-warm.jpg img/portrait.jpg`, then bump the `?v=`
+on the `<img>` in `index.html` so caches let go of the old one.
 
 `regions-map.svg` is generated from Natural Earth `ne_110m_land` (public domain), projected
 equirectangular and simplified. Regenerate it rather than hand-editing the path data.
