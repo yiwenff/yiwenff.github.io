@@ -48,94 +48,162 @@
         encodes how much water was there, so the amount is inferred rather than measured — a large prior
         ensemble conditioned on satellite fractional snow-covered area.</p>
 
-      <div class="rows stack">
+      <figure class="fig mapfig">
+        <img src="img/regions-map.svg" alt="World map marking the regions covered: Western North America, the Andes, High Mountain Asia, and Altay in Xinjiang">
+        <figcaption>Where the work reaches. Coastlines from Natural Earth, public domain.</figcaption>
+      </figure>
 
-        <article class="row">
-          <div class="rowhead">
-            <h3>Western North America and the Andes</h3>
-          </div>
-          <figure class="shot fit"><img src="img/work-spatiotemporal-analysis.png" alt="Study domains of the midlatitude American Cordillera: Western United States, Sierra Nevada and the Andes"></figure>
-          <div>
-            <p class="meta">The doctoral work, and the record everything else is tested against.</p>
-            <p class="venue">480 m · daily · water years 1985–2021 · NASA NSIDC <a href="https://doi.org/10.5067/PP7T2GBI52I2">10.5067/PP7T2GBI52I2</a></p>
-            <div class="pubs">
-              <div class="pub"><span class="y">2025</span><span>ESA's Snow CCI snow-cover product is good enough to drive a reanalysis, with biases that track zenith angle and image frequency. Four watersheds, western U.S. and Canada. <i>The Cryosphere</i> <a class="doi" href="https://doi.org/10.5194/tc-19-2017-2025">doi:10.5194/tc-19-2017-2025</a></span></div>
-              <div class="pub"><span class="y">2023</span><span>Products coarser than 10 km lose most of the peak storage; only sub-kilometre resolution recovers the windward–leeward contrast. Extends the comparison to the Andes. <i>The Cryosphere</i> <a class="doi" href="https://doi.org/10.5194/tc-17-5175-2023">doi:10.5194/tc-17-5175-2023</a></span></div>
-              <div class="pub"><span class="y">2023</span><span>The same question against synthetic truth, where the answer can be checked. <i>Hydrology and Earth System Sciences</i> <a class="doi" href="https://doi.org/10.5194/hess-27-21-2023">doi:10.5194/hess-27-21-2023</a></span></div>
-              <div class="pub"><span class="y">2022</span><span>The dataset itself — the longest fine-resolution snow record for the region. <i>Scientific Data</i> <a class="doi" href="https://doi.org/10.1038/s41597-022-01768-7">doi:10.1038/s41597-022-01768-7</a></span></div>
-              <div class="pub"><span class="y">2019</span><span>How few snow-depth images are needed for a continuous SWE estimate. <i>Geophysical Research Letters</i> <a class="doi" href="https://doi.org/10.1029/2019GL082507">doi:10.1029/2019GL082507</a></span></div>
-            </div>
-            <p class="venue" style="margin-top:1rem">Used downstream by others — wolverine denning habitat
-              (<a href="https://doi.org/10.5194/hess-27-2747-2023"><i>HESS</i> 2023</a>), snowmelt–radiation
-              feedback on streamflow (<a href="https://doi.org/10.1029/2023GL105118"><i>GRL</i> 2023</a>),
-              California snowline projections (<a href="https://doi.org/10.1007/s00382-023-06776-w"><i>Climate Dynamics</i> 2023</a>).</p>
-          </div>
-        </article>
+      <details class="region" open>
+        <summary>
+          <h3>Western North America and the Andes</h3>
+          <span class="rmeta">480 m · daily · water years 1985–2021 · NASA NSIDC · 5 papers</span>
+        </summary>
+        <div class="rbody">
 
-        <article class="row">
-          <div class="rowhead">
-            <h3>High Mountain Asia</h3>
-          </div>
-          <div>
-            <p class="meta">The same method where the ground networks are thinnest and the stakes for water
-              supply are highest.</p>
-            <p class="venue">480 m · daily · water years 1999–2017 · NASA NSIDC <a href="https://doi.org/10.5067/HNAUGJQXSCVU">10.5067/HNAUGJQXSCVU</a></p>
-            <div class="pubs">
-              <div class="pub"><span class="y">2022</span><span>Global snow products disagree with that record, and with each other, by more than the signal being studied. <i>Geophysical Research Letters</i> <a class="doi" href="https://doi.org/10.1029/2022GL100082">doi:10.1029/2022GL100082</a></span></div>
-              <div class="pub"><span class="y">2021</span><span>Where and when snow water actually sits across High Mountain Asia, from the Landsat–MODIS era reanalysis. <i>The Cryosphere</i> <a class="doi" href="https://doi.org/10.5194/tc-15-5261-2021">doi:10.5194/tc-15-5261-2021</a></span></div>
-            </div>
-          </div>
-        </article>
+          <article class="finding">
+            <h4>The record itself</h4>
+            <figure class="shot fit"><img src="img/reanalysis-map.png" alt="Western United States domain: in situ snow stations, ASO survey tiles and the basins used in the prior precipitation analysis"></figure>
+            <p>Daily snow water equivalent at 480 m for every water year from 1985 to 2021 — the longest
+              fine-resolution snow record for the region, and the reference everything below is tested
+              against.</p>
+            <p class="cite">Fang, Liu &amp; Margulis, <i>Scientific Data</i> <b>9</b>, 677 (2022). Figure 1,
+              CC&nbsp;BY&nbsp;4.0. <a href="https://doi.org/10.1038/s41597-022-01768-7">doi:10.1038/s41597-022-01768-7</a></p>
+          </article>
 
-        <article class="row">
-          <div class="rowhead">
-            <h3>Altay, Xinjiang</h3>
-          </div>
-          <figure class="shot fit"><img src="img/work-altay.png" alt="Altay elevation, median snow water equivalent season and total SWE volumes for water years 2018 to 2025"></figure>
-          <div>
-            <p class="meta">The current independent line — finer resolution, and a second constraint that
-              does not depend on the snow being visible.</p>
-            <p class="venue">5 arc-seconds, about 150 m · daily · water years 2018–2025 · figshare <a href="https://doi.org/10.6084/m9.figshare.33421588">10.6084/m9.figshare.33421588</a></p>
-            <div class="pubs">
-              <div class="pub"><span class="y">2026</span><span>Multispectral unmixing and differential interferometry as assimilation constraints on Altay snow water equivalent. Submitted to <i>The Cryosphere</i>.</span></div>
-            </div>
-            <p class="venue" style="margin-top:1rem">NSFC Young Scientists Fund, Type C, 2027–2029, project
-              leader · 2025 snow-season field campaigns with the Chinese Academy of Sciences.</p>
-          </div>
-        </article>
+          <article class="finding">
+            <h4>Coarse products lose half the snow</h4>
+            <figure class="shot fit"><img src="img/paper-wna-resolution.png" alt="Peak snow water equivalent across ten products over the western United States, arranged from high to low resolution, with a bar chart of climatological volumes by resolution class"></figure>
+            <p>Low-resolution products underestimate western U.S. peak storage by <b>53%</b> — 127±54 km³
+              against a 269 km³ reference. In the Andes the shortfall is 34%, and MERRA2 alone misses 79%.</p>
+            <p>Agreement needs resolution finer than about 10 km; reproducing the rain shadow needs finer
+              than about 5 km, which only SNODAS (1 km) and UA (4 km) manage. Precipitation explains most of
+              the snowfall spread — R²=0.55 in the western U.S., 0.84 in the Andes — but melt processes
+              contribute more uncertainty than rain–snow partitioning does.</p>
+            <p class="cite">Fang, Liu, Li, Sun &amp; Margulis, <i>The Cryosphere</i> <b>17</b>, 5175–5195
+              (2023). Figure 3, CC&nbsp;BY&nbsp;4.0. <a href="https://doi.org/10.5194/tc-17-5175-2023">doi:10.5194/tc-17-5175-2023</a></p>
+          </article>
 
-      </div>
+          <article class="finding">
+            <h4>A second sensor can drive the same machinery — with a forest-shaped bias</h4>
+            <figure class="shot fit"><img src="img/paper-snowcci.png" alt="Snow CCI versus Landsat reanalysis: seasonal SWE cycles for Tuolumne and Aspen, peak SWE maps and their difference, and relative differences binned by forest cover and aspect"></figure>
+            <p>ESA's Snow CCI snow-cover product is good enough to drive the reanalysis — correlations of
+              0.47–0.91 against in-situ peak SWE, against Landsat's 0.61–0.92.</p>
+            <p>It carries a negative peak-SWE bias of 0.03 to 0.16 m that grows with forest cover and is
+              worst on north-facing slopes. Only about 40% of the assimilated images meaningfully update the
+              posterior, and what separates a good year from a bad one is the quality of the melt-season
+              imagery.</p>
+            <p class="cite">Sun, <b>Fang</b>, Margulis, Mortimer, Mudryk &amp; Derksen, <i>The Cryosphere</i>
+              <b>19</b>, 2017–2036 (2025). Figure 9, CC&nbsp;BY&nbsp;4.0.
+              <a href="https://doi.org/10.5194/tc-19-2017-2025">doi:10.5194/tc-19-2017-2025</a></p>
+          </article>
+
+          <p class="also">Also from this record — how few snow-depth images are enough for a continuous SWE
+            estimate (<a href="https://doi.org/10.1029/2019GL082507"><i>GRL</i> 2019</a>) and the same
+            question against synthetic truth (<a href="https://doi.org/10.5194/hess-27-21-2023"><i>HESS</i> 2023</a>);
+            used downstream by others for wolverine denning habitat
+            (<a href="https://doi.org/10.5194/hess-27-2747-2023"><i>HESS</i> 2023</a>), snowmelt–radiation
+            feedback on streamflow (<a href="https://doi.org/10.1029/2023GL105118"><i>GRL</i> 2023</a>) and
+            California snowline projections
+            (<a href="https://doi.org/10.1007/s00382-023-06776-w"><i>Climate Dynamics</i> 2023</a>).</p>
+        </div>
+      </details>
+
+      <details class="region">
+        <summary>
+          <h3>High Mountain Asia</h3>
+          <span class="rmeta">480 m · daily · water years 1999–2017 · NASA NSIDC · 2 papers</span>
+        </summary>
+        <div class="rbody">
+
+          <article class="finding">
+            <h4>Where the water actually sits</h4>
+            <figure class="shot fit"><img src="img/paper-hma-swe.png" alt="Map of peak seasonal snow water equivalent climatology across High Mountain Asia, with non-seasonal snow and ice masked"></figure>
+            <p>Peak storage averages <b>163 km³</b> across the 18 water years, ranging from 114 to 227.
+              Two-thirds of it sits in the northwestern basins; the southeast holds 18%, the northeast 9%.</p>
+            <p>More than half the volume lies above 3500 m, peaking between 3000 and 4000 m. The peak
+              typically arrives around 18 March, but in some years as early as 10 February and in others as
+              late as 5 May — and 1.5 K of warming moves low-elevation storage upslope rather than simply
+              removing it.</p>
+            <p class="cite">Liu, <b>Fang</b> &amp; Margulis, <i>The Cryosphere</i> <b>15</b>, 5261–5280
+              (2021). Figure 3a, CC&nbsp;BY&nbsp;4.0.
+              <a href="https://doi.org/10.5194/tc-15-5261-2021">doi:10.5194/tc-15-5261-2021</a></p>
+          </article>
+
+          <article class="finding">
+            <h4>Global products disagree — and it is the snowfall</h4>
+            <p>Eight global products put HMA peak storage at 161±102 km³, a <b>33% underestimate</b> against
+              the reanalysis. The spread in cumulative snowfall explains more than 80% of that uncertainty,
+              and about half the accumulation-season snowfall is lost to ablation before the peak.</p>
+            <p>Over a billion people live downstream of this snow, and the products meant to describe it
+              disagree by more than the signal being studied.</p>
+            <p class="cite">Liu, <b>Fang</b>, Li &amp; Margulis, <i>Geophysical Research Letters</i>
+              <b>49</b>, e2022GL100082 (2022). No figure — the journal retains figure copyright.
+              <a href="https://doi.org/10.1029/2022GL100082">doi:10.1029/2022GL100082</a></p>
+          </article>
+        </div>
+      </details>
+
+      <details class="region">
+        <summary>
+          <h3>Altay, Xinjiang</h3>
+          <span class="rmeta">about 150 m · daily · water years 2018–2025 · figshare · 1 under review</span>
+        </summary>
+        <div class="rbody">
+
+          <article class="finding">
+            <h4>Finer, and a constraint that does not need the snow to be visible</h4>
+            <figure class="shot fit"><img src="img/work-altay.png" alt="Altay elevation, median snow water equivalent season and total SWE volumes for water years 2018 to 2025"></figure>
+            <p>The current independent line — 5 arc-second snow water equivalent over the Kelan watershed,
+              assimilated from Harmonized Landsat–Sentinel fractional snow-covered area, archived and open.</p>
+            <p>Optical assimilation fails where cloud or forest hides the snow. The work under review tests
+              multispectral unmixing and differential interferometry as constraints that do not depend on
+              seeing the surface, validated against the 2025 snow-season field campaigns.</p>
+            <p class="cite"><b>Fang</b>, Pan, Margulis, Zhou, Sun, Lei, Xiong, Wang &amp; Tan. Submitted to
+              <i>The Cryosphere</i>. Dataset: <i>Altay Daily Snow Reanalysis, Version 1</i>, CC&nbsp;BY&nbsp;4.0.
+              <a href="https://doi.org/10.6084/m9.figshare.33421588">doi:10.6084/m9.figshare.33421588</a></p>
+          </article>
+
+          <p class="also">NSFC Young Scientists Fund, Type C, 2027–2029, project leader · 2025 snow-season
+            field campaigns with the Chinese Academy of Sciences.</p>
+        </div>
+      </details>
     </section>
 
     <section>
       <h2>RSHub and LLM agents</h2>
       <p>Physics-based scattering models are accurate and almost unusable — each one a separate codebase,
-        its own inputs, its own conventions. RSHub puts our group's soil, vegetation and snow microwave
-        models on one cloud platform, behind a single interface.</p>
+        its own inputs, its own conventions, its own build. RSHub puts our group's soil, vegetation and snow
+        microwave models on one cloud platform behind a single interface, so a researcher can ask how a
+        land-surface variable shows up across frequency bands without installing anything.</p>
 
-      <div class="rows stack">
-        <article class="row">
-          <div class="rowhead">
-            <h3>RSHub — Remote Sensing Hub</h3>
-          </div>
-          <figure class="shot fit"><img src="img/work-rshub.png" alt="RSHub system architecture: LLM agent, client server, microwave scattering models and job management"></figure>
-          <div>
-            <p class="meta">A researcher can ask how a land-surface variable shows up across frequency bands
-              without installing anything — which is the question sensor selection and retrieval design
-              actually turn on.</p>
-            <p class="venue">Publicly deployed at <a href="https://rshub.zju.edu.cn">rshub.zju.edu.cn</a> · built and led with eight students</p>
-            <div class="pubs">
-              <div class="pub"><span class="y">2026</span><span>RSHub 2.0 — an LLM-based autonomous agent that plans and runs the modelling, rather than a form the user fills in. Submitted to <i>IEEE Geoscience and Remote Sensing Magazine</i>.</span></div>
-              <div class="pub"><span class="y">2025</span><span>The platform, its architecture and its model registry. <i>IEEE Geoscience and Remote Sensing Magazine</i> <a class="doi" href="https://doi.org/10.1109/MGRS.2025.3540538">doi:10.1109/MGRS.2025.3540538</a></span></div>
-              <div class="pub"><span class="y">2024</span><span>The shared-computing framework and user interface underneath it. <i>IGARSS</i> <a class="doi" href="https://doi.org/10.1109/IGARSS53475.2024.10642599">doi:10.1109/IGARSS53475.2024.10642599</a></span></div>
-            </div>
-            <p class="venue" style="margin-top:1rem">The physics the platform serves — wet-snow electromagnetic
-              modelling and validation (<a href="https://doi.org/10.1109/IGARSS55030.2025.11243446"><i>IGARSS</i> 2025</a>)
-              and SWE retrieval coupling 1-D hydrology with passive microwave radiative transfer
-              (<a href="https://doi.org/10.3390/rs16101732"><i>Remote Sensing</i> 2024</a>).</p>
-          </div>
-        </article>
-      </div>
+      <figure class="fig">
+        <span class="shot fit" style="display:block"><img src="img/work-rshub.png" alt="RSHub system architecture: LLM agent, web server, client server, model registry, job scheduler on HPC, and file and database servers"></span>
+        <figcaption>RSHub architecture — the client server takes a scenario description and computing
+          request, the job scheduler runs the wrapped scattering models on HPC, and results return through
+          the file and database servers.</figcaption>
+      </figure>
+
+      <h3>What it supports</h3>
+      <dl class="spec">
+        <dt>Snow</dt><dd><b>DMRT-TRI</b> — dense media radiative transfer, active and passive</dd>
+        <dt>Soil</dt><dd><b>NMM3D-VIE-DDA</b> — numerical Maxwell, rough-surface scattering · <b>AIEM</b> — advanced integral equation model</dd>
+        <dt>Vegetation</dt><dd><b>VPRT</b> — vegetation polarimetric radiative transfer</dd>
+        <dt>Access</dt><dd>Web interface · Python toolbox · Jupyter notebooks · REST API</dd>
+        <dt>Behind it</dt><dd>Job scheduler on HPC, model packages wrapped to a common interface, file and database servers</dd>
+        <dt>Deployed</dt><dd><a href="https://rshub.zju.edu.cn">rshub.zju.edu.cn</a> — public, built and led with eight students</dd>
+      </dl>
+
+      <p>The platform paper describes the architecture and model registry
+        (<a href="https://doi.org/10.1109/MGRS.2025.3540538"><i>IEEE GRSM</i> 2025</a>), with the shared
+        computing framework underneath it
+        (<a href="https://doi.org/10.1109/IGARSS53475.2024.10642599"><i>IGARSS</i> 2024</a>). RSHub 2.0,
+        under review, replaces the form the user fills in with an LLM agent that plans and runs the
+        modelling itself.</p>
+
+      <p>The physics the platform serves — wet-snow electromagnetic modelling and validation
+        (<a href="https://doi.org/10.1109/IGARSS55030.2025.11243446"><i>IGARSS</i> 2025</a>) and SWE
+        retrieval coupling 1-D hydrology with passive microwave radiative transfer
+        (<a href="https://doi.org/10.3390/rs16101732"><i>Remote Sensing</i> 2024</a>).</p>
     </section>
   </main>
 

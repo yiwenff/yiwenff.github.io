@@ -193,3 +193,50 @@ body.rail-dragging .page{transition:none}
   .row figure.shot{transition:none}
   .row figure.shot:hover{transform:none}
 }
+
+
+/* ==========================================================================
+   Research — regions map, collapsible regions, paper findings
+   ========================================================================== */
+.mapfig{margin:1.6rem 0 2.4rem}
+.mapfig img{width:100%; display:block}
+
+details.region{border-top:1px solid var(--rule); padding:0}
+details.region:first-of-type{border-top:none}
+details.region > summary{list-style:none; cursor:pointer; padding:1.3rem 0 1.3rem 1.7rem;
+     position:relative; display:block; transition:color .15s}
+details.region > summary::-webkit-details-marker{display:none}
+details.region > summary::before{content:""; position:absolute; left:.25rem; top:1.85rem;
+     width:.42rem; height:.42rem; border-right:1px solid var(--ink-3);
+     border-bottom:1px solid var(--ink-3); transform:rotate(-45deg);
+     transition:transform .18s ease, border-color .15s}
+details.region[open] > summary::before{transform:rotate(45deg)}
+details.region > summary:hover::before{border-color:var(--accent)}
+details.region > summary h3{margin:0; transition:color .15s}
+details.region > summary:hover h3{color:var(--accent)}
+details.region > summary .rmeta{display:block; font-size:.82rem; color:var(--ink-3);
+     margin-top:.3rem; letter-spacing:.02em}
+details.region > summary:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.rbody{padding:.2rem 0 2.2rem 1.7rem}
+@media (max-width:640px){ details.region > summary{padding-left:1.4rem} .rbody{padding-left:0} }
+
+.finding{margin:0 0 2.6rem}
+.finding:last-child{margin-bottom:1.4rem}
+.finding h4{font-family:var(--disp); font-weight:400; font-size:.98rem; color:var(--ink);
+     margin:0 0 .7rem}
+.finding figure.shot{aspect-ratio:auto; width:100%; max-height:30rem; background:#fff;
+     display:flex; align-items:center; justify-content:flex-start; margin:0 0 .9rem;
+     transition:transform .25s ease, box-shadow .25s ease}
+.finding figure.shot:hover{transform:scale(1.01); box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.finding figure.shot img{width:auto; height:auto; max-width:100%; max-height:30rem; object-fit:contain}
+.finding p{margin:0 0 .6rem; max-width:40rem}
+.cite{font-size:.8rem; color:var(--ink-3); line-height:1.55; max-width:40rem}
+.cite a{color:var(--ink-3); text-decoration:underline; text-decoration-color:var(--rule-2)}
+.cite a:hover{color:var(--accent)}
+.also{font-size:.86rem; color:var(--ink-2); border-top:1px solid var(--rule);
+     padding-top:1rem; max-width:42rem}
+.also a{color:var(--accent)}
+@media (prefers-reduced-motion:reduce){
+  details.region > summary::before,.finding figure.shot{transition:none}
+  .finding figure.shot:hover{transform:none}
+}

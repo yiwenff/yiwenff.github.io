@@ -15,10 +15,33 @@ Until a file exists the page shows a neutral hatch at the right size, so the lay
 | `work-spatiotemporal-analysis.png` | American Cordillera study domains — WUS, Sierra, Andes | index, work | **done** |
 | `reanalysis-map.png` | Fig. 1 of the *Sci Data* 2022 paper — WUS domain, in situ sites, ASO tiles | research | **done** |
 | `og-card.jpg` | 1200×630 social preview card | all | **missing** |
+| `regions-map.svg` | World map marking the four regions covered | research | **done** |
+| `paper-wna-resolution.png` | *TC* 2023 Fig. 3 — peak SWE across ten products by resolution | research | **done** |
+| `paper-snowcci.png` | *TC* 2025 Fig. 9 — Snow CCI vs Landsat reanalysis | research | **done** |
+| `paper-hma-swe.png` | *TC* 2021 Fig. 3a — HMA peak SWE climatology (cropped from the 2-panel figure) | research | **done** |
 | `favicon.png` | 1:1 512 px browser tab icon | all | **missing** |
 
 `_originals/` holds the full-resolution uploads. It is git-ignored — regenerate the web-sized versions
 from there rather than re-exporting from scratch.
+
+## Licensing — figures taken from published papers
+
+Every reused figure was licence-checked through Crossref before download, not assumed. All four below are
+**CC BY 4.0**, and each carries its citation in a `.cite` line directly under it on `research.html`.
+**Keep those citations if the figures stay** — CC BY requires attribution.
+
+| File | Source | Licence |
+|---|---|---|
+| `reanalysis-map.png` | Fang, Liu & Margulis, *Sci Data* **9**, 677 (2022), Fig. 1 | CC BY 4.0 |
+| `paper-wna-resolution.png` | Fang et al., *The Cryosphere* **17**, 5175 (2023), Fig. 3 | CC BY 4.0 |
+| `paper-snowcci.png` | Sun et al., *The Cryosphere* **19**, 2017 (2025), Fig. 9 | CC BY 4.0 |
+| `paper-hma-swe.png` | Liu, Fang & Margulis, *The Cryosphere* **15**, 5261 (2021), Fig. 3a | CC BY 4.0 |
+
+`regions-map.svg` is generated from Natural Earth `ne_110m_land` (public domain), projected
+equirectangular and simplified. Regenerate it rather than hand-editing the path data.
+
+**Do NOT reuse figures from these**, even though they are Yiwen's own papers — the publisher holds them:
+*GRL* 2019 (10.1029/2019GL082507), *GRL* 2022 (10.1029/2022GL100082), and the IEEE GRSM RSHub paper.
 
 ## Licensing
 
