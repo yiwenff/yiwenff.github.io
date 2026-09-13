@@ -253,15 +253,6 @@ figure.fig > .shot{max-width:var(--measure); display:flex; justify-content:cente
 figure.fig > .shot img{max-width:100%; height:auto}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.88em; color:var(--ink)}
 
-/* two figures side by side inside one stacked row */
-.figpair{display:grid; grid-template-columns:1fr 1fr; gap:1rem; align-items:start;
-         width:var(--fig-w); max-width:var(--measure); margin:0 auto}
-.rows.stack .row .figpair figure.shot{width:100%; max-width:none; margin:0; max-height:none}
-.rows.stack .row .figpair figure.shot img{max-height:none}
-/* .shot is a flex row: a figcaption inside it becomes a sibling of the image and
-   squeezes it sideways. Captions belong outside the .shot box. */
-.figpair figcaption{display:none}
-@media (max-width:640px){ .figpair{grid-template-columns:1fr} }
 
 /* collapsible top-level sections, with matching sidebar sub-links */
 details.sect > summary{list-style:none; cursor:pointer; position:relative}
