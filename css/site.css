@@ -94,11 +94,12 @@ em{font-style:italic}
 /* stacked variant — figure on top, text below. Add "stack" to .rows to use it.
    The figure keeps its own aspect here rather than being letterboxed into a
    fixed box, so nothing is padded with dead white space. */
+.rows.stack{--fig-w:80%; --fig-maxh:21rem}   /* figure size — the one knob */
 .rows.stack .row{grid-template-columns:minmax(0,1fr); gap:1.15rem; padding:2.8rem 0}
-.rows.stack .row figure.shot{aspect-ratio:auto; width:100%; max-height:26rem;
-     display:flex; align-items:center; justify-content:center; background:#fff}
-.rows.stack .row figure.shot img{width:auto; height:auto; max-width:100%; max-height:26rem;
-     object-fit:contain}
+.rows.stack .row figure.shot{aspect-ratio:auto; width:var(--fig-w); max-height:var(--fig-maxh);
+     display:flex; align-items:center; justify-content:flex-start; background:#fff}
+.rows.stack .row figure.shot img{width:auto; height:auto; max-width:100%;
+     max-height:var(--fig-maxh); object-fit:contain}
 .rows.stack .row .meta{max-width:42rem}
 /* title sits above its figure; tighten it against the image below */
 .row .rowhead{grid-column:1/-1}
