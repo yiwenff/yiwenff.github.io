@@ -13,28 +13,35 @@
   function save(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   function load(k)    { try { return localStorage.getItem(k); } catch (e) { return null; } }
 
-  var btn  = document.querySelector('.railtoggle');
+  // two toggles: one in the rail above Biography, one in the masthead that is
+  // the only way back once the rail is gone.
+  var btns = document.querySelectorAll('.railtoggle');
   var grip = document.querySelector('.railgrip');
 
   function setRail(collapsed) {
     body.classList.toggle('rail-collapsed', collapsed);
-    if (!btn) return;
-    btn.setAttribute('aria-expanded', String(!collapsed));
-    var label = collapsed ? 'Show menu' : 'Hide menu';
-    btn.title = label;
-    btn.setAttribute('aria-label', label);
+    Array.prototype.forEach.call(btns, function (b) {
+      b.setAttribute('aria-expanded', String(!collapsed));
+      var label = collapsed ? 'Show sidebar' : 'Hide sidebar';
+      b.title = label;
+      b.setAttribute('aria-label', label);
+      var lbl = b.querySelector('.lbl');
+      if (lbl) lbl.textContent = label;
+    });
   }
 
   // restore a saved width before anything is interactive
   var savedW = parseInt(load(KEY_W), 10);
   if (savedW >= MIN && savedW <= MAX) root.style.setProperty('--rail', savedW + 'px');
 
-  if (btn) {
+  if (btns.length) {
     setRail(body.classList.contains('rail-collapsed'));
-    btn.addEventListener('click', function () {
-      var next = !body.classList.contains('rail-collapsed');
-      setRail(next);
-      save(KEY_OPEN, next ? '1' : '0');
+    Array.prototype.forEach.call(btns, function (b) {
+      b.addEventListener('click', function () {
+        var next = !body.classList.contains('rail-collapsed');
+        setRail(next);
+        save(KEY_OPEN, next ? '1' : '0');
+      });
     });
     // arm the width transition only after the restored state has painted
     setTimeout(function () { body.classList.add('rail-ready'); }, 0);

@@ -90,6 +90,16 @@ em{font-style:italic}
 @media (max-width:980px){ .row{grid-template-columns:minmax(0,.8fr) minmax(0,1fr); gap:1.8rem} }
 .row:first-child{border-top:none; padding-top:.4rem}
 @media (max-width:640px){ .row{grid-template-columns:1fr; gap:.9rem} }
+
+/* stacked variant — figure on top, text below. Add "stack" to .rows to use it.
+   The figure keeps its own aspect here rather than being letterboxed into a
+   fixed box, so nothing is padded with dead white space. */
+.rows.stack .row{grid-template-columns:minmax(0,1fr); gap:1.15rem; padding:2.8rem 0}
+.rows.stack .row figure.shot{aspect-ratio:auto; width:100%; max-height:26rem;
+     display:flex; align-items:center; justify-content:center; background:#fff}
+.rows.stack .row figure.shot img{width:auto; height:auto; max-width:100%; max-height:26rem;
+     object-fit:contain}
+.rows.stack .row .meta{max-width:42rem}
 .row .type{font-family:var(--disp); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase;
            color:var(--ink-3); margin:0 0 .45rem; display:block}
 .row .meta{font-size:.9rem; color:var(--ink-2); margin:.3rem 0 0}
@@ -155,7 +165,14 @@ footer{grid-column:1/-1; border-top:1px solid var(--rule); padding:1.6rem 0 3rem
 
 .railtoggle{appearance:none; background:none; border:0; padding:.25rem; margin:0;
             color:var(--ink-3); cursor:pointer; display:inline-flex; align-items:center;
-            border-radius:3px; flex:none; transition:color .15s, background .15s}
+            gap:.5rem; border-radius:3px; flex:none; transition:color .15s, background .15s}
+/* in the rail, above Biography */
+.railtoggle.in-rail{margin:0 0 1.15rem; padding:.25rem .3rem .25rem 0;
+            font-family:var(--disp); font-size:.78rem; letter-spacing:.02em; color:var(--ink-3)}
+.railtoggle.in-rail:hover{background:none; color:var(--ink)}
+/* the masthead copy is the only way back once the rail is gone */
+.mast .railtoggle{display:none}
+body.rail-collapsed .mast .railtoggle{display:inline-flex}
 .railtoggle:hover{color:var(--ink); background:#f1f1ef}
 .railtoggle:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
 .railtoggle .pi{width:15px; height:12px; border:1px solid currentColor; border-radius:2px;
@@ -169,11 +186,11 @@ aside{position:sticky}
 .railgrip{position:absolute; top:0; bottom:0; right:calc(var(--railgap) / -2 - 3px); width:7px;
           cursor:col-resize; z-index:5; touch-action:none}
 .railgrip::after{content:""; position:absolute; top:0; bottom:0; left:3px; width:1px;
-          background:var(--rule-2); opacity:0; transition:opacity .15s}
-.railgrip:hover::after,body.rail-dragging .railgrip::after{opacity:1}
+          background:var(--rule); transition:background .15s, width .15s, left .15s}
+.railgrip:hover::after,body.rail-dragging .railgrip::after{background:var(--accent); width:2px; left:2px}
 body.rail-dragging{cursor:col-resize; user-select:none}
 
-/* collapsed: the rail is gone entirely — the toggle lives in the masthead */
+/* collapsed: the rail is gone entirely — only the masthead toggle remains */
 body.rail-collapsed{--railgap:0px}
 body.rail-collapsed aside{display:none}
 /* aside leaves the flow, so the grid must drop to a single column —
