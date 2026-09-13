@@ -72,3 +72,59 @@
   window.addEventListener('hashchange', function () { reveal(location.hash); });
   if (location.hash) reveal(location.hash);
 })();
+
+
+/* Click a figure to see it full size. Hover already grows it slightly; this is
+   for the dense multi-panel figures that a thumbnail cannot carry. */
+(function () {
+  'use strict';
+  var figures = document.querySelectorAll('.row figure.shot, .finding figure.shot');
+  if (!figures.length) return;
+
+  var box = document.createElement('div');
+  box.className = 'lightbox';
+  box.setAttribute('role', 'dialog');
+  box.setAttribute('aria-modal', 'true');
+  box.innerHTML = '<button class="close" aria-label="Close">\u00d7</button><img alt=""><p class="cap"></p>';
+  document.body.appendChild(box);
+
+  var boxImg = box.querySelector('img');
+  var boxCap = box.querySelector('.cap');
+  var lastFocus = null;
+
+  function open(img) {
+    lastFocus = document.activeElement;
+    boxImg.src = img.currentSrc || img.src;
+    boxImg.alt = img.alt || '';
+    boxCap.textContent = img.alt || '';
+    box.setAttribute('open', '');
+    box.querySelector('.close').focus();
+  }
+  function close() {
+    box.removeAttribute('open');
+    boxImg.removeAttribute('src');
+    if (lastFocus) lastFocus.focus();
+  }
+
+  Array.prototype.forEach.call(figures, function (fig) {
+    var img = fig.querySelector('img');
+    if (!img) return;
+    function arm() {
+      if (!img.naturalWidth) return;           // never open an empty overlay
+      fig.classList.add('zoomable');
+      fig.setAttribute('tabindex', '0');
+      fig.setAttribute('role', 'button');
+      fig.setAttribute('aria-label', 'Enlarge figure');
+      fig.addEventListener('click', function () { open(img); });
+      fig.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); }
+      });
+    }
+    if (img.complete) arm(); else img.addEventListener('load', arm);
+  });
+
+  box.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && box.hasAttribute('open')) close();
+  });
+})();

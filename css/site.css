@@ -99,7 +99,7 @@ em{font-style:italic}
 /* stacked variant — figure on top, text below. Add "stack" to .rows to use it.
    The figure keeps its own aspect here rather than being letterboxed into a
    fixed box, so nothing is padded with dead white space. */
-.rows.stack{--fig-w:var(--measure); --fig-maxh:21rem}
+.rows.stack{--fig-w:100%; --fig-maxh:32rem}   /* figures span the column; text keeps --measure */
 .rows.stack .row{grid-template-columns:minmax(0,1fr); gap:1.15rem; padding:2.8rem 0}
 .rows.stack .row figure.shot{aspect-ratio:auto; width:var(--fig-w); max-height:var(--fig-maxh);
      display:flex; align-items:center; justify-content:center; background:#fff}
@@ -278,3 +278,19 @@ aside nav .sub a:hover{color:var(--accent)}
 .figdesc{font-size:.84rem; color:var(--ink-2); margin:.55rem 0 1.6rem;
          max-width:var(--measure); line-height:1.62}
 .figdesc b{color:var(--ink); font-weight:500}
+
+/* click a figure to see it full size */
+.row figure.shot.zoomable,.finding figure.shot.zoomable{cursor:zoom-in}
+.row figure.shot.zoomable:focus-visible,
+.finding figure.shot.zoomable:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+
+.lightbox{position:fixed; inset:0; z-index:100; display:none; align-items:center;
+          justify-content:center; padding:3vmin; background:rgba(252,252,251,.98); cursor:zoom-out}
+.lightbox[open]{display:flex}
+.lightbox img{max-width:100%; max-height:88vh; width:auto; height:auto; object-fit:contain;
+              background:#fff; box-shadow:0 6px 40px rgba(0,0,0,.18)}
+.lightbox .cap{position:absolute; left:0; right:0; bottom:1.2rem; text-align:center;
+              font-size:.8rem; color:var(--ink-3); padding:0 4vmin; margin:0 auto; max-width:46rem}
+.lightbox .close{position:absolute; top:1rem; right:1.3rem; font-family:var(--disp); font-size:1.6rem;
+              line-height:1; color:var(--ink-3); background:none; border:0; cursor:pointer; padding:.3rem .5rem}
+.lightbox .close:hover{color:var(--ink)}
