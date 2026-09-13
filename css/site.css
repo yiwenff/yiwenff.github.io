@@ -101,6 +101,12 @@ em{font-style:italic}
 .rows.stack .row figure.shot img{width:auto; height:auto; max-width:100%;
      max-height:var(--fig-maxh); object-fit:contain}
 .rows.stack .row .meta{max-width:42rem}
+/* paper lists inside a stacked row sit tighter than a full publications page */
+.rows.stack .row .pubs{margin-top:.9rem}
+.rows.stack .row .pub{font-size:.88rem; padding:.6rem 0}
+.rows.stack .row .pub .doi{display:inline-block}
+/* a region with no figure should not leave a gap where one would be */
+.rows.stack .rowhead + div{margin-top:.15rem}
 /* title sits above its figure; tighten it against the image below */
 .row .rowhead{grid-column:1/-1}
 .rows.stack .row{row-gap:.95rem}
