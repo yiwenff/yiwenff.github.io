@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=20260913-21">
-<script defer src="js/site.js?v=20260913-21"></script>
+<link rel="stylesheet" href="css/site.css?v=20260914-22">
+<script defer src="js/site.js?v=20260914-22"></script>
 </head>
 <body>
 <div class="page">
@@ -39,20 +39,22 @@
   <main>
     <h1>Research</h1>
 
-    <p class="lede">How much water is held in the world's mountains, and how confidently do we know it?
-      Two lines of work: Bayesian snow data assimilation across three mountain regions, and the software
-      that puts physics-based models within reach of the people who need them.</p>
+    <p class="lede">I work on two related problems: how much water is held in the world's mountains, and
+      how confidently we can know it. The first is Bayesian snow data assimilation across three mountain
+      regions. The second is software that makes physics-based models easier for other researchers to
+      run.</p>
 
     <section>
       <details class="sect" id="assimilation" open>
         <summary><h2>Snow data assimilation</h2></summary>
-      <p>Satellites see where snow is, not how much. During melt the rate at which a pixel sheds its cover
-        encodes how much water was there, so the amount is inferred rather than measured — a large prior
-        ensemble conditioned on satellite fractional snow-covered area.</p>
+      <p>Satellites measure where snow lies, not how much water it holds. During melt, the rate at which a
+        pixel loses its cover carries information about the amount that was there. The method infers snow
+        water equivalent by conditioning a large prior ensemble on satellite fractional snow-covered
+        area.</p>
 
       <figure class="fig mapfig">
         <img src="img/regions-map.svg" alt="World map marking the regions covered: Western North America, the Andes, High Mountain Asia, and Altay in Xinjiang">
-        <figcaption>Where the work reaches. Coastlines from Natural Earth, public domain.</figcaption>
+        <figcaption>Regions covered by this work. Coastlines from Natural Earth, public domain.</figcaption>
       </figure>
 
       <details class="region" id="western-north-america" open>
@@ -65,9 +67,9 @@
           <article class="finding" id="wus-record">
             <h4>The record itself</h4>
             <figure class="shot fit"><img src="img/paper-wus-record.png" alt="Western United States snow reanalysis: seasonal SWE volume cycle by region, a Sierra Nevada close-up, and the peak SWE map for the full domain"></figure>
-            <p>Daily snow water equivalent at 480 m for every water year from 1985 to 2021 — the longest
-              fine-resolution snow record for the region, and the reference everything below is tested
-              against.</p>
+            <p>Daily snow water equivalent at 480 m for every water year from 1985 to 2021. It is the
+              longest fine-resolution snow record for the region, and the reference used in the studies
+              below.</p>
             <p class="cite">Fang, Liu &amp; Margulis, <i>Scientific Data</i> <b>9</b>, 677 (2022). Figure 4,
               CC&nbsp;BY&nbsp;4.0. <a href="https://doi.org/10.1038/s41597-022-01768-7">doi:10.1038/s41597-022-01768-7</a></p>
           </article>
@@ -77,20 +79,21 @@
             <figure class="shot fit"><img src="img/paper-wna-resolution.png" alt="Peak snow water equivalent across ten products over the western United States, arranged from high to low resolution, with a bar chart of climatological volumes by resolution class"></figure>
             <p class="figdesc"><b>Western United States.</b> Peak snow water equivalent from ten products,
               ordered high to low resolution, against the WUS-SR reference in the first panel. The mountain
-              ranges that are sharp in the first three panels dissolve into blocks by the last; panel (k)
+              ranges that are sharp in the first three panels dissolve into blocks by the last. Panel (k)
               totals each product by resolution class.</p>
 
             <figure class="shot fit"><img src="img/paper-andes-resolution.png" alt="Peak snow water equivalent across eight products over the Andes, arranged from high to low resolution, with a bar chart of climatological volumes by resolution class"></figure>
-            <p class="figdesc"><b>Andes.</b> The same comparison over a narrower range, where the failure is
-              starker — the four coarsest products show almost no snow at all. Panel (i) gives the
-              climatological volumes, with ERA5-Land overshooting the reference rather than missing it.</p>
+            <p class="figdesc"><b>Andes.</b> The same comparison over a narrower range, where the
+              disagreement is larger. The four coarsest products show almost no snow at all. Panel (i) gives
+              the climatological volumes, and ERA5-Land overshoots the reference rather than missing it.</p>
 
-            <p>Low-resolution products underestimate western U.S. peak storage by <b>53%</b> — 127±54 km³
-              against a 269 km³ reference. In the Andes the shortfall is 34%, and MERRA2 alone misses 79%.</p>
-            <p>Agreement needs resolution finer than about 10 km; reproducing the rain shadow needs finer
-              than about 5 km, which only SNODAS (1 km) and UA (4 km) manage. Precipitation explains most of
-              the snowfall spread — R²=0.55 in the western U.S., 0.84 in the Andes — but melt processes
-              contribute more uncertainty than rain–snow partitioning does.</p>
+            <p>Low-resolution products underestimate western U.S. peak storage by <b>53%</b>, giving
+              127±54 km³ against a 269 km³ reference. In the Andes the shortfall is 34%, and MERRA2 alone
+              misses 79%.</p>
+            <p>Agreement takes resolution finer than about 10 km. Reproducing the rain shadow takes finer
+              than about 5 km, which only SNODAS (1 km) and UA (4 km) achieve. Precipitation explains most
+              of the snowfall spread, with R²=0.55 in the western U.S. and 0.84 in the Andes, although melt
+              processes contribute more uncertainty than rain-snow partitioning does.</p>
             <p class="cite">Fang, Liu, Li, Sun &amp; Margulis, <i>The Cryosphere</i> <b>17</b>, 5175–5195
               (2023). Figures 3 (western U.S.) and 4 (Andes), CC&nbsp;BY&nbsp;4.0.
               <a href="https://doi.org/10.5194/tc-17-5175-2023">doi:10.5194/tc-17-5175-2023</a></p>
@@ -128,28 +131,29 @@
         <div class="rbody">
 
           <article class="finding">
-            <h4>Where the water actually sits</h4>
+            <h4>Where the snow water sits</h4>
             <figure class="shot fit"><img src="img/paper-hma-swe.png" alt="Map of peak seasonal snow water equivalent climatology across High Mountain Asia, with non-seasonal snow and ice masked"></figure>
             <p>Peak storage averages <b>163 km³</b> across the 18 water years, ranging from 114 to 227.
-              Two-thirds of it sits in the northwestern basins; the southeast holds 18%, the northeast 9%.</p>
+              Two-thirds of it lies in the northwestern basins. The southeast holds 18% and the northeast
+              9%.</p>
             <p>More than half the volume lies above 3500 m, peaking between 3000 and 4000 m. The peak
               typically arrives around 18 March, but in some years as early as 10 February and in others as
-              late as 5 May — and 1.5 K of warming moves low-elevation storage upslope rather than simply
-              removing it.</p>
+              late as 5 May. Warming of 1.5 K moves low-elevation storage upslope rather than removing
+              it.</p>
             <p class="cite">Liu, <b>Fang</b> &amp; Margulis, <i>The Cryosphere</i> <b>15</b>, 5261–5280
               (2021). Figure 3a, CC&nbsp;BY&nbsp;4.0.
               <a href="https://doi.org/10.5194/tc-15-5261-2021">doi:10.5194/tc-15-5261-2021</a></p>
           </article>
 
           <article class="finding">
-            <h4>Global products disagree — and it is the snowfall</h4>
+            <h4>Global products disagree, and snowfall explains most of it</h4>
             <p>Eight global products put HMA peak storage at 161±102 km³, a <b>33% underestimate</b> against
               the reanalysis. The spread in cumulative snowfall explains more than 80% of that uncertainty,
               and about half the accumulation-season snowfall is lost to ablation before the peak.</p>
             <p>Over a billion people live downstream of this snow, and the products meant to describe it
               disagree by more than the signal being studied.</p>
             <p class="cite">Liu, <b>Fang</b>, Li &amp; Margulis, <i>Geophysical Research Letters</i>
-              <b>49</b>, e2022GL100082 (2022). No figure — the journal retains figure copyright.
+              <b>49</b>, e2022GL100082 (2022). No figure, because the journal retains figure copyright.
               <a href="https://doi.org/10.1029/2022GL100082">doi:10.1029/2022GL100082</a></p>
           </article>
         </div>
@@ -163,10 +167,11 @@
         <div class="rbody">
 
           <article class="finding">
-            <h4>Finer, and a constraint that does not need the snow to be visible</h4>
+            <h4>Higher resolution, and a constraint that works under cloud</h4>
             <figure class="shot fit"><img src="img/work-altay.png" alt="Altay elevation, median snow water equivalent season and total SWE volumes for water years 2018 to 2025"></figure>
-            <p>The current independent line — 5 arc-second snow water equivalent over the Kelan watershed,
-              assimilated from Harmonized Landsat–Sentinel fractional snow-covered area, archived and open.</p>
+            <p>This is my current independent line of work. It produces 5 arc-second snow water equivalent
+              over the Kelan watershed, assimilated from Harmonized Landsat-Sentinel fractional snow-covered
+              area, and the dataset is openly archived.</p>
             <p>Optical assimilation fails where cloud or forest hides the snow. The work under review tests
               multispectral unmixing and differential interferometry as constraints that do not depend on
               seeing the surface, validated against the 2025 snow-season field campaigns.</p>
@@ -185,26 +190,26 @@
     <section>
       <details class="sect" id="rshub" open>
         <summary><h2>RSHub and LLM agents</h2></summary>
-      <p>Physics-based scattering models are accurate and almost unusable — each one a separate codebase,
-        its own inputs, its own conventions, its own build. RSHub puts our group's soil, vegetation and snow
+      <p>Physics-based scattering models are accurate but hard to use. Each one is a separate codebase with
+        its own inputs, conventions, and build process. RSHub puts our group's soil, vegetation, and snow
         microwave models on one cloud platform behind a single interface, so a researcher can ask how a
         land-surface variable shows up across frequency bands without installing anything.</p>
 
       <figure class="fig">
         <span class="shot fit" style="display:block"><img src="img/work-rshub.png" alt="RSHub system architecture: LLM agent, web server, client server, model registry, job scheduler on HPC, and file and database servers"></span>
-        <figcaption>RSHub architecture — the client server takes a scenario description and computing
+        <figcaption>RSHub architecture. The client server takes a scenario description and computing
           request, the job scheduler runs the wrapped scattering models on HPC, and results return through
           the file and database servers.</figcaption>
       </figure>
 
       <h3>What it supports</h3>
       <dl class="spec">
-        <dt>Snow</dt><dd><b>DMRT-TRI</b> — dense media radiative transfer, active and passive</dd>
-        <dt>Soil</dt><dd><b>NMM3D-VIE-DDA</b> — numerical Maxwell, rough-surface scattering · <b>AIEM</b> — advanced integral equation model</dd>
-        <dt>Vegetation</dt><dd><b>VPRT</b> — vegetation polarimetric radiative transfer</dd>
+        <dt>Snow</dt><dd><b>DMRT-TRI</b>, dense media radiative transfer, active and passive</dd>
+        <dt>Soil</dt><dd><b>NMM3D-VIE-DDA</b>, numerical Maxwell rough-surface scattering · <b>AIEM</b>, advanced integral equation model</dd>
+        <dt>Vegetation</dt><dd><b>VPRT</b>, vegetation polarimetric radiative transfer</dd>
         <dt>Access</dt><dd>Web interface · Python toolbox · Jupyter notebooks · REST API</dd>
         <dt>Behind it</dt><dd>Job scheduler on HPC, model packages wrapped to a common interface, file and database servers</dd>
-        <dt>Deployed</dt><dd><a href="https://rshub.zju.edu.cn">rshub.zju.edu.cn</a> · <a href="https://github.com/zjuiEMLab/rshub/tree/main">github.com/zjuiEMLab/rshub</a> — public, built and led with undergraduate and graduate students</dd>
+        <dt>Deployed</dt><dd><a href="https://rshub.zju.edu.cn">rshub.zju.edu.cn</a> · <a href="https://github.com/zjuiEMLab/rshub/tree/main">github.com/zjuiEMLab/rshub</a>. Public, built and led with undergraduate and graduate students</dd>
       </dl>
 
       <p>The platform paper describes the architecture and model registry
@@ -214,15 +219,16 @@
         under review, replaces the form the user fills in with an LLM agent that plans and runs the
         modeling itself.</p>
 
-      <p>The physics the platform serves — SWE retrieval coupling 1-D hydrology with passive microwave
-        radiative transfer (<a href="https://doi.org/10.3390/rs16101732"><i>Remote Sensing</i> 2024</a>),
-        and the wet-snow work the case below comes from.</p>
+      <p>The platform serves work on SWE retrieval coupling 1-D hydrology with passive microwave radiative
+        transfer (<a href="https://doi.org/10.3390/rs16101732"><i>Remote Sensing</i> 2024</a>), and the
+        wet-snow study the case below comes from.</p>
 
-      <h3>A worked case — DMRT-TRI against NoSREx</h3>
+      <h3>A worked case: DMRT-TRI against NoSREx</h3>
       <p>Six snowpack profiles from the NoSREx campaign, December 2010 to April 2011, run through DMRT-TRI
         at 16.7 GHz and compared with tower backscatter at four incidence angles.</p>
-      <p>The whole study is about twenty lines: describe the snowpack layer by layer, submit six jobs,
-        collect the results. The models themselves run on the cluster — the same call any RSHub user makes.</p>
+      <p>The whole study is about twenty lines of code. It describes the snowpack layer by layer, submits
+        six jobs, and collects the results. The models run on the cluster through the same call any RSHub
+        user makes.</p>
 
       <article class="finding">
         <figure class="shot fit"><img src="img/demo-timeseries.png" alt="Simulated versus observed backscatter at 40 degrees incidence for VV, HH, VH and HV polarizations, December 2010 to April 2011"></figure>
@@ -232,8 +238,8 @@
 
       <article class="finding">
         <figure class="shot fit"><img src="img/demo-scatter.png" alt="Scatter plot of simulated against observed backscatter for four polarizations, with the one-to-one line"></figure>
-        <p><b>Mean RMSE 0.97 dB</b> across the four polarizations — VV 0.90, HH 0.89, VH 1.06, HV 1.03,
-          24 points each.</p>
+        <p><b>Mean RMSE 0.97 dB</b> across the four polarizations (VV 0.90, HH 0.89, VH 1.06, HV 1.03),
+          with 24 points each.</p>
         <p class="cite">Du, Cao, <b>Fang</b>, Cao &amp; Tan, <i>Electromagnetic modeling and validation of
           wet snow for passive and active microwave observations: insights from the NoSREx dataset and the
           Altay field campaign</i>. <i>IGARSS</i> 2025, 920–923.
@@ -241,10 +247,10 @@
       </article>
 
       <dl class="spec">
-        <dt>Model</dt><dd>DMRT-TRI, active mode, via <code>rshub.submit_jobs</code></dd>
+        <dt>Model</dt><dd>DMRT-TRI in active mode, called through <code>rshub.submit_jobs</code></dd>
         <dt>Frequency</dt><dd>16.7 GHz · incidence 30°, 40°, 50°, 60° · VV, HH, VH, HV</dd>
-        <dt>Cases</dt><dd>Six NoSREx snowpacks, 7 Dec 2010 – 12 Apr 2011; the April case wet, soil moisture 0.2</dd>
-        <dt>Try it</dt><dd><a href="https://github.com/zjuiEMLab/rshub/tree/main/demo">github.com/zjuiEMLab/rshub — demo notebooks ↗</a> for snow, soil and vegetation. <a href="https://github.com/zjuiEMLab/rshub/blob/main/demo/Snow-demo-DMRT-TRI.ipynb">Snow-demo-DMRT-TRI</a> is self-contained and needs only a free token.</dd>
+        <dt>Cases</dt><dd>Six NoSREx snowpacks, 7 Dec 2010 to 12 Apr 2011. The April case is wet, soil moisture 0.2</dd>
+        <dt>Try it</dt><dd><a href="https://github.com/zjuiEMLab/rshub/tree/main/demo">github.com/zjuiEMLab/rshub demo notebooks ↗</a> for snow, soil and vegetation. <a href="https://github.com/zjuiEMLab/rshub/blob/main/demo/Snow-demo-DMRT-TRI.ipynb">Snow-demo-DMRT-TRI</a> is self-contained and needs only a free token.</dd>
       </dl>
       </details>
     </section>
