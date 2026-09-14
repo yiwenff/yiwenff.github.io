@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=20260914-31">
-<script defer src="js/site.js?v=20260914-31"></script>
+<link rel="stylesheet" href="css/site.css?v=20260914-32">
+<script defer src="js/site.js?v=20260914-32"></script>
 </head>
 <body>
 <div class="page">
@@ -222,10 +222,11 @@
     <section>
       <details class="sect" id="rshub" open>
         <summary><h2>RSHub and LLM agents</h2></summary>
-      <p>Physics-based scattering models are accurate but hard to use. Each one is a separate codebase with
-        its own inputs, conventions, and build process. RSHub puts our group's soil, vegetation, and snow
-        microwave models on one cloud platform behind a single interface, so a researcher can ask how a
-        land-surface variable shows up across frequency bands without installing anything.</p>
+      <p>Physics-based scattering models are accurate, but most are computationally expensive and
+        dependent on their build environment. RSHub puts the soil, vegetation, and snow microwave models
+        developed in Prof. Shurun Tan's research group on one cloud platform behind a single interface, so a
+        researcher can compute brightness temperature, backscatter, and related properties by chatting with
+        an agent from their own laptop.</p>
 
       <figure class="fig">
         <span class="shot fit" style="display:block"><img src="img/work-rshub.png" alt="RSHub system architecture: LLM agent, web server, client server, model registry, job scheduler on HPC, and file and database servers"></span>
