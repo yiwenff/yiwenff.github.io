@@ -303,3 +303,11 @@ aside nav .sub a:hover{color:var(--accent)}
 .lightbox .close{position:absolute; top:1rem; right:1.3rem; font-family:var(--disp); font-size:1.6rem;
               line-height:1; color:var(--ink-3); background:none; border:0; cursor:pointer; padding:.3rem .5rem}
 .lightbox .close:hover{color:var(--ink)}
+
+/* what each measurement source gives up */
+.limits{list-style:none; margin:0 0 1.4rem; padding:0; max-width:var(--measure)}
+.limits li{position:relative; padding-left:1.05rem; margin:0 0 .7rem; font-size:.92rem;
+     color:var(--ink-2); line-height:1.65}
+.limits li::before{content:""; position:absolute; left:0; top:.68em; width:5px; height:1px;
+     background:var(--rule-2)}
+.limits b{color:var(--ink); font-weight:500}

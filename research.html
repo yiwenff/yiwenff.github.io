@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=20260914-23">
-<script defer src="js/site.js?v=20260914-23"></script>
+<link rel="stylesheet" href="css/site.css?v=20260914-24">
+<script defer src="js/site.js?v=20260914-24"></script>
 </head>
 <body>
 <div class="page">
@@ -39,18 +39,45 @@
   <main>
     <h1>Research</h1>
 
-    <p class="lede">I work on two related problems: how much water is held in the world's mountains, and
-      how confidently we can know it. The first is Bayesian snow data assimilation across three mountain
-      regions. The second is software that makes physics-based models easier for other researchers to
-      run.</p>
+    <p class="lede">I am working toward LLM-powered Earth agents that can monitor water resources with far
+      less manual setup, from finding and screening data through configuring physical models, running them,
+      and reporting what was assumed along the way.</p>
+    <p>Mountain snow is the case I am building this on. It is the largest freshwater store in many basins
+      and the least well measured term in the water balance, which makes it a demanding test for any such
+      system. The two sections below are the halves of that work: Bayesian snow data assimilation supplies
+      the physical foundation, and RSHub is the software layer that makes physics-based models easy enough
+      for another researcher, or an agent, to run.</p>
 
     <section>
       <details class="sect" id="assimilation" open>
         <summary><h2>Snow data assimilation</h2></summary>
-      <p>Satellites measure where snow lies, not how much water it holds. During melt, the rate at which a
-        pixel loses its cover carries information about the amount that was there. The method infers snow
-        water equivalent by conditioning a large prior ensemble on satellite fractional snow-covered
-        area.</p>
+      <p>No single source measures mountain snow water equivalent well. Each one gives up coverage,
+        resolution, or sensitivity somewhere.</p>
+
+      <ul class="limits">
+        <li><b>In situ measurements.</b> Treated as ground truth, but stations are sparsely distributed,
+          often not publicly available, and placed where crews can reach them: mid elevation, flat ground,
+          forest clearings. That is not where most of the snow sits.</li>
+        <li><b>Passive microwave.</b> The signal relates well to SWE, is measured daily, and the record runs
+          back to 1979. Resolution is coarse, about 25 km, and above roughly 150 mm SWE the brightness
+          temperature signal saturates and deep snow is underestimated.</li>
+        <li><b>Visible and near-infrared.</b> High spatial resolution and a relatively long record, but they
+          see the extent of the snow rather than its depth.</li>
+        <li><b>SAR.</b> Recent work shows the cross-polarization ratio relates well to snow depth, at high
+          resolution. Coverage is not continuous in space or time, and it does not work over the rocky
+          terrain in Altay.</li>
+        <li><b>InSAR.</b> An active topic, with a theoretical relationship between phase change and SWE
+          change, at high spatial resolution. It returns change rather than absolute value, phase wrapping
+          has to be resolved, snowfall between acquisitions can leave pairs with low coherence, and coverage
+          is not continuous.</li>
+        <li><b>Spaceborne lidar.</b> Existing non-commercial satellites do not repeat their ground
+          tracks.</li>
+        <li><b>Models.</b> They produce space-time continuous daily fields, but uncertainty in the inputs
+          carries straight through to the output.</li>
+      </ul>
+
+      <p>Data assimilation plays these against each other. The model supplies space-time continuity, and the
+        remotely sensed observations constrain it.</p>
 
       <figure class="fig mapfig">
         <img src="img/regions-map.svg" alt="World map marking the regions covered: Western North America, the Andes, High Mountain Asia, and Altay in Xinjiang">
