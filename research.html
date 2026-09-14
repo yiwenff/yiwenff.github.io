@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=20260914-24">
-<script defer src="js/site.js?v=20260914-24"></script>
+<link rel="stylesheet" href="css/site.css?v=20260914-25">
+<script defer src="js/site.js?v=20260914-25"></script>
 </head>
 <body>
 <div class="page">
@@ -94,9 +94,13 @@
           <article class="finding" id="wus-record">
             <h4>The record itself</h4>
             <figure class="shot fit"><img src="img/paper-wus-record.png" alt="Western United States snow reanalysis: seasonal SWE volume cycle by region, a Sierra Nevada close-up, and the peak SWE map for the full domain"></figure>
-            <p>Daily snow water equivalent at 480 m for every water year from 1985 to 2021. It is the
-              longest fine-resolution snow record for the region, and the reference used in the studies
-              below.</p>
+            <p>Daily snow water equivalent at 16 arc-seconds, about 480 m, for every water year from 1985
+              to 2021. What was new was the combination: that resolution, the full western U.S. extent, and
+              daily continuity across 37 water years.</p>
+            <p>The figures below call it <b>WUS-SR</b>, for Western United States Snow Reanalysis. It is our
+              own product, and it serves as the reference the other products are measured against. Its
+              counterpart over the Andes, <b>Andes-SR</b>, comes from the same group at UCLA (Cortés and
+              Margulis, 2017) and is built with the same Bayesian framework.</p>
             <p class="cite">Fang, Liu &amp; Margulis, <i>Scientific Data</i> <b>9</b>, 677 (2022). Figure 4,
               CC&nbsp;BY&nbsp;4.0. <a href="https://doi.org/10.1038/s41597-022-01768-7">doi:10.1038/s41597-022-01768-7</a></p>
           </article>
@@ -110,9 +114,10 @@
               totals each product by resolution class.</p>
 
             <figure class="shot fit"><img src="img/paper-andes-resolution.png" alt="Peak snow water equivalent across eight products over the Andes, arranged from high to low resolution, with a bar chart of climatological volumes by resolution class"></figure>
-            <p class="figdesc"><b>Andes.</b> The same comparison over a narrower range, where the
-              disagreement is larger. The four coarsest products show almost no snow at all. Panel (i) gives
-              the climatological volumes, and ERA5-Land overshoots the reference rather than missing it.</p>
+            <p class="figdesc"><b>Andes.</b> The same comparison over the Andes, against the Andes-SR
+              reference. Low-resolution products underestimate peak SWE and smooth out the spatial patterns,
+              so the variation along the range is largely lost. Panel (i) gives the climatological volumes,
+              where ERA5-Land overestimates the reference rather than underestimating it.</p>
 
             <p>Low-resolution products underestimate western U.S. peak storage by <b>53%</b>, giving
               127±54 km³ against a 269 km³ reference. In the Andes the shortfall is 34%, and MERRA2 alone
