@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=20260914-29">
-<script defer src="js/site.js?v=20260914-29"></script>
+<link rel="stylesheet" href="css/site.css?v=20260914-30">
+<script defer src="js/site.js?v=20260914-30"></script>
 </head>
 <body>
 <div class="page">
@@ -54,8 +54,8 @@
     <section>
       <details class="sect" id="assimilation" open>
         <summary><h2>Snow data assimilation</h2></summary>
-      <p>No single source measures mountain snow water equivalent well. Each one gives up coverage,
-        resolution, or sensitivity somewhere.</p>
+      <p>No single observing system constrains mountain snow water equivalent adequately. Each trades
+        spatial resolution against temporal revisit, spatial coverage, or retrieval sensitivity to SWE.</p>
 
       <ul class="limits">
         <li><b>In situ measurements.</b> Treated as ground truth, but stations are sparsely distributed,
@@ -98,12 +98,11 @@
             <h4>The record itself</h4>
             <figure class="shot fit"><img src="img/paper-wus-record.png" alt="Western United States snow reanalysis: seasonal SWE volume cycle by region, a Sierra Nevada close-up, and the peak SWE map for the full domain"></figure>
             <p>Daily snow water equivalent at 16 arc-seconds, about 480 m, for every water year from 1985
-              to 2021. What was new was the combination: that resolution, the full western U.S. extent, and
-              daily continuity across 37 water years.</p>
-            <p>The figures below call it <b>WUS-SR</b>, for Western United States Snow Reanalysis. It is our
-              own product, and it serves as the reference the other products are measured against. Its
-              counterpart over the Andes, <b>Andes-SR</b>, comes from the same group at UCLA (Cortés and
-              Margulis, 2017) and is built with the same Bayesian framework.</p>
+              to 2021.</p>
+            <p>The Western United States Snow Reanalysis (<b>WUS</b>) serves as the reference the other
+              products are measured against. Its counterpart over the Andes, <b>Andes-SR</b>, comes from the
+              same group at UCLA (Cortés and Margulis, 2017) and is built with the same Bayesian
+              framework.</p>
             <p class="cite">Fang, Liu &amp; Margulis, <i>Scientific Data</i> <b>9</b>, 677 (2022). Figure 4,
               CC&nbsp;BY&nbsp;4.0. <a href="https://doi.org/10.1038/s41597-022-01768-7">doi:10.1038/s41597-022-01768-7</a></p>
           </article>
@@ -206,9 +205,8 @@
             <figure class="shot fit"><img src="img/work-altay.png" alt="Altay elevation, median snow water equivalent season and total SWE volumes for water years 2018 to 2025"></figure>
             <p>The dataset gives 5 arc-second snow water equivalent over the Kelan watershed, assimilated
               from Harmonized Landsat-Sentinel fractional snow-covered area. It is openly archived.</p>
-            <p>Optical assimilation fails where cloud or forest hides the snow. The work under review tests
-              multispectral unmixing and differential interferometry as constraints that do not depend on
-              seeing the surface, validated against the 2025 snow-season field campaigns.</p>
+            <p>Validated against one in situ SWE site, a few snow depth sites, and a UAV lidar swath. The
+              dataset then serves as the reference for evaluating newly developed InSAR retrievals.</p>
             <p class="cite"><b>Fang</b>, Pan, Margulis, Zhou, Sun, Lei, Xiong, Wang &amp; Tan. Submitted to
               <i>The Cryosphere</i>. Dataset: <i>Altay Daily Snow Reanalysis, Version 1</i>, CC&nbsp;BY&nbsp;4.0.
               <a href="https://doi.org/10.6084/m9.figshare.33421588">doi:10.6084/m9.figshare.33421588</a></p>
